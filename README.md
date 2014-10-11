@@ -1,4 +1,7 @@
 Koala
 =====
 
-Koala - Cross platform App, um einen zentralen Verschenkmarkt in Deutschland zu schaffen 
+Koala - Eine cross-platform App, um einen zentralen Verschenkemarkt in Deutschland zu schaffen
+
+
+
