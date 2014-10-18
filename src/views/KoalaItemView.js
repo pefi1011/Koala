@@ -126,13 +126,15 @@ define(function(require, exports, module) {
     /*** create pictures ***/
     var firstPic = new KoalaItemPictureView({
       pic: this.options.model.pic1,
+      size: [60,60]
     });
     var secondPic = new KoalaItemPictureView({
       pic: this.options.model.pic2,
-      // size: [20,20]
+      size: [100,100]
     });
     var thirdPic = new KoalaItemPictureView({
       // pic: this.options.model.pic3
+      size: [80,80]
     });
 
     /*** picutres positioning ***/
