@@ -124,45 +124,38 @@ define(function(require, exports, module) {
     console.log('KoalaItemView: BEGIN _createItemPictures');
 
 
-    /*** firstPic ***/
+    /*** create pictures ***/
     var firstPic = new KoalaItemPictureView({
       pic: this.options.model.pic1,
     });
-
-    var firstPicModifier = new StateModifier({
-      origin: [0.01, 0.025],
-      align: [0.01, 0.025],
-    });
-    this.layout.content.add(firstPicModifier).add(firstPic);
-
-    /*** secondPic ***/
-
     var secondPic = new KoalaItemPictureView({
       pic: this.options.model.pic2,
       // size: [20,20]
     });
-
-    var secondPicModifier = new StateModifier({
-      origin: [0.5, 0.025],
-      align: [0.5, 0.025]
-    });
-    this.layout.content.add(secondPicModifier).add(secondPic);
-
-
-    /*** thirdPic ***/
     var thirdPic = new KoalaItemPictureView({
       // pic: this.options.model.pic3
     });
 
+    /*** picutres positioning ***/
+    var firstPicModifier = new StateModifier({
+      origin: [0.01, 0.025],
+      align: [0.01, 0.025],
+    });
+    var secondPicModifier = new StateModifier({
+      origin: [0.5, 0.025],
+      align: [0.5, 0.025]
+    });
     var thirdPicModifier = new StateModifier({
       origin: [0.99, 0.025],
       align: [0.99, 0.025]
     });
+
+    /*** add pictures to the render tree ***/
+    this.layout.content.add(firstPicModifier).add(firstPic);
+    this.layout.content.add(secondPicModifier).add(secondPic);
     this.layout.content.add(thirdPicModifier).add(thirdPic);
 
-
     console.log('KoalaItemView: END _createItemPictures');
-
   }
 
   function _createFlyerView() {
