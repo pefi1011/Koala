@@ -35,14 +35,15 @@ define(function(require, exports, module) {
     flyerItemHeight: 70,
     borderStyle: '1px dashed black',
     flyerItemColor: '#f9ec98',
-    isPulledOff: false
+    isPulledOff: false,
+    pullOffYTranslation: 200
   };
 
   FlyerItemView.prototype.pullOff = function() {
     console.log('FlyerItemView: BEGIN pullOff')
 
     this.rootModifier.setTransform(
-      Transform.translate(10, 300, 0), {
+      Transform.translate(10, this.options.pullOffYTranslation, 0), {
         duration: 1000,
         curve: Easing.outBounce
       }
