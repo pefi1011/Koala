@@ -28,6 +28,8 @@ define(function(require, exports, module) {
 
   KoalaItemView.DEFAULT_OPTIONS = {
     headerSize: 44,
+    edgeToPicDistance: 0.025,
+    headerToPicDistance: 0.01,
     model: undefined
   };
 
@@ -123,32 +125,34 @@ define(function(require, exports, module) {
   function _getItemPictures() {
     console.log('KoalaItemView: BEGIN _createItemPictures');
 
+    var width = (window.innerWidth/3);
+
     /*** create pictures ***/
     var firstPic = new KoalaItemPictureView({
       pic: this.options.model.pic1,
-      size: [60,60]
+      size: [width,width]
     });
     var secondPic = new KoalaItemPictureView({
       pic: this.options.model.pic2,
-      size: [100,100]
+      size: [width,width]
     });
     var thirdPic = new KoalaItemPictureView({
       // pic: this.options.model.pic3
-      size: [80,80]
+      size: [width,width]
     });
 
     /*** picutres positioning ***/
     var firstPicPositionMod = new StateModifier({
-      origin: [0.01, 0.025],
-      align: [0.01, 0.025],
+      origin: [0.01, this.options.headerToPicDistance],
+      align: [0.01, this.options.headerToPicDistance],
     });
     var secondPicPositionMod = new StateModifier({
-      origin: [0.5, 0.025],
-      align: [0.5, 0.025]
+      origin: [0.5, this.options.headerToPicDistance],
+      align: [0.5, this.options.headerToPicDistance]
     });
     var thirdPicPositionMod = new StateModifier({
-      origin: [0.99, 0.025],
-      align: [0.99, 0.025]
+      origin: [0.99, this.options.headerToPicDistance],
+      align: [0.99, this.options.headerToPicDistance]
     });
 
     /*** add pictures to the render tree ***/
@@ -162,13 +166,16 @@ define(function(require, exports, module) {
   function _createFlyerView() {
     console.log('KoalaItemView: BEGIN _createFlyerView');
 
+    var width = (window.innerWidth/3);
+
     var flyer = new FlyerView({
-      flyerItemNumber: 5
+      flyerItemNumber: 5,
+      flyerItemContent: 'Ja :)',
     });
 
     var flyerViewModifier = new StateModifier({
-      origin: [0.5, 0.55],
-      align: [0.5, 0.55]
+      origin: [0.5, 0.325],
+      align: [0.5, 0.325]
     });
 
     this.layout.content.add(flyerViewModifier).add(flyer);
