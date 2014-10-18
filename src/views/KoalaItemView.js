@@ -123,7 +123,6 @@ define(function(require, exports, module) {
   function _getItemPictures() {
     console.log('KoalaItemView: BEGIN _createItemPictures');
 
-
     /*** create pictures ***/
     var firstPic = new KoalaItemPictureView({
       pic: this.options.model.pic1,
@@ -137,23 +136,23 @@ define(function(require, exports, module) {
     });
 
     /*** picutres positioning ***/
-    var firstPicModifier = new StateModifier({
+    var firstPicPositionMod = new StateModifier({
       origin: [0.01, 0.025],
       align: [0.01, 0.025],
     });
-    var secondPicModifier = new StateModifier({
+    var secondPicPositionMod = new StateModifier({
       origin: [0.5, 0.025],
       align: [0.5, 0.025]
     });
-    var thirdPicModifier = new StateModifier({
+    var thirdPicPositionMod = new StateModifier({
       origin: [0.99, 0.025],
       align: [0.99, 0.025]
     });
 
     /*** add pictures to the render tree ***/
-    this.layout.content.add(firstPicModifier).add(firstPic);
-    this.layout.content.add(secondPicModifier).add(secondPic);
-    this.layout.content.add(thirdPicModifier).add(thirdPic);
+    this.layout.content.add(firstPicPositionMod).add(firstPic);
+    this.layout.content.add(secondPicPositionMod).add(secondPic);
+    this.layout.content.add(thirdPicPositionMod).add(thirdPic);
 
     console.log('KoalaItemView: END _createItemPictures');
   }
