@@ -187,11 +187,25 @@ define(function(require, exports, module) {
   function _createItemDiscription() {
     console.log('KoalaItemView: BEGIN _createItemDiscription');
 
+    var width = 0.9 * window.innerWidth ;
+
     var discriptionSurface = new Surface({
+      content: this.options.model.discription,
+      size: [width,100],
       properties: {
-        backgroundColor: 'black'
+        backgroundColor: 'white'
+
       }
     });
+
+    var discriptioPositionMod = new StateModifier({
+      origin: [0.5, 0.9],
+      align: [0.5, 0.9]
+    });
+
+    this.layout.content.add(discriptioPositionMod).add(discriptionSurface);
+
+
     console.log('KoalaItemView: END _createItemDiscription');
   }
 
