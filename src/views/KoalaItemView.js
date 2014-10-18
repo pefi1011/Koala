@@ -34,7 +34,6 @@ define(function(require, exports, module) {
   function _createLayout() {
     console.log('KoalaItemView: BEGIN _createLayout');
 
-
     this.layout = new HeaderFooter({
       headerSize: this.options.headerSize
     });
@@ -52,7 +51,7 @@ define(function(require, exports, module) {
     console.log('KoalaItemView: BEGIN _createHeader');
 
     /*** header backround ***/
-    var backgroundSurface = new Surface({
+    var headerBackgroundSurface = new Surface({
       properties: {
         backgroundColor: 'black'
       }
@@ -60,7 +59,7 @@ define(function(require, exports, module) {
     var backgroundModifier = new StateModifier({
       transform: Transform.behind
     });
-    this.layout.header.add(backgroundModifier).add(backgroundSurface);
+    this.layout.header.add(backgroundModifier).add(headerBackgroundSurface);
 
     /*** Back to KoalaSearchResult ***/
     this.hamburgerSurface = new ImageSurface({

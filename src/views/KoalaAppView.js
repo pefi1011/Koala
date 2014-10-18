@@ -6,7 +6,6 @@ define(function(require, exports, module) {
   var Transform = require('famous/core/Transform');
   var StateModifier = require('famous/modifiers/StateModifier');
 
-  var PageView = require('views/PageView');
   var KoalaItemView = require('views/KoalaItemView');
 
   // should come from the backend
@@ -24,13 +23,10 @@ define(function(require, exports, module) {
     */
   }
 
-
   /*** KoalaAppView constructor ***/
 
   function KoalaAppView() {
     View.apply(this, arguments);
-
-  //  _createPageView.call(this);
 
     _createKoalaItemView.call(this);
   }
@@ -39,13 +35,6 @@ define(function(require, exports, module) {
   KoalaAppView.prototype.constructor = KoalaAppView;
 
   KoalaAppView.DEFAULT_OPTIONS = {};
-
-  function _createPageView() {
-    this.pageView = new PageView();
-    this.pageModifier = new StateModifier();
-
-    this.add(this.pageModifier).add(this.pageView);
-  }
 
   /*** KoalaItemView.js ***/
   function _createKoalaItemView() {
