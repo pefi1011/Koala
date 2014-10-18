@@ -56,10 +56,10 @@ define(function(require, exports, module) {
         backgroundColor: 'black'
       }
     });
-    var backgroundModifier = new StateModifier({
+    var headerBackgroundModifier = new StateModifier({
       transform: Transform.behind
     });
-    this.layout.header.add(backgroundModifier).add(headerBackgroundSurface);
+    this.layout.header.add(headerBackgroundModifier).add(headerBackgroundSurface);
 
     /*** Back to KoalaSearchResult ***/
     this.hamburgerSurface = new ImageSurface({
@@ -108,7 +108,8 @@ define(function(require, exports, module) {
       zIndex: -1
     });
     var bodyBackgroundModifier = new StateModifier({
-      transform: Transform.behind
+      transform: Transform.behind,
+      size:[undefined,undefined]
     });
     this.layout.content.add(bodyBackgroundModifier).add(bodyBackgroundSurface);
 
@@ -130,7 +131,7 @@ define(function(require, exports, module) {
 
     var firstPicModifier = new StateModifier({
       origin: [0.01, 0.025],
-      align: [0.01, 0.025]
+      align: [0.01, 0.025],
     });
     this.layout.content.add(firstPicModifier).add(firstPic);
 
@@ -185,7 +186,11 @@ define(function(require, exports, module) {
   function _createItemDiscription() {
     console.log('KoalaItemView: BEGIN _createItemDiscription');
 
-
+    var discriptionSurface = new Surface({
+      properties: {
+        backgroundColor: 'black'
+      }
+    });
     console.log('KoalaItemView: END _createItemDiscription');
   }
 
