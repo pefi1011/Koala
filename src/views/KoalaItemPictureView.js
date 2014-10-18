@@ -27,7 +27,7 @@ define(function(require, exports, module) {
   // setting the size property in default options here
   KoalaItemPictureView.DEFAULT_OPTIONS = {
     size: [200, 200],
-    filmBorder: 8,
+    filmBorder: 2,
     photoBorder: 3,
     pic: 'img/koalaPics/noPic.jpg'
   };
