@@ -168,8 +168,11 @@ define(function(require, exports, module) {
 
     var width = (window.innerWidth/3);
 
+console.log('HIER');
+    console.log(this);
+
     var flyer = new FlyerView({
-      flyerItemNumber: 5,
+      flyerItemNumber: this.options.model.maxNumberOfInterested,
       flyerItemContent: 'Ja :)',
     });
 
@@ -193,7 +196,8 @@ define(function(require, exports, module) {
       content: this.options.model.discription,
       size: [width,100],
       properties: {
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        textAlign: 'left',
 
       }
     });

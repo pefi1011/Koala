@@ -13,7 +13,7 @@ define(function(require, exports, module) {
 
     owner: 'Musterman',
     name: 'Tisch',
-    maxNumberOfInterested: 5,
+    maxNumberOfInterested: 3,
     pic1: 'img/koalaPics/tPic1.jpg',
     pic2: 'img/koalaPics/tPic2.jpg',
     pic3: undefined,

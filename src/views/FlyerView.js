@@ -67,7 +67,6 @@ define(function(require, exports, module) {
     console.log('FlyerView: END putBackFlyerItem..');
   };
 
-
   function _createFlyerSheet() {
     console.log('FlyerView: BEGIN _createFlyerSheet..');
 
