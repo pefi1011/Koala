@@ -76,7 +76,7 @@ define(function(require, exports, module) {
       properties: {
         borderBottom: this.options.borderStyle,
         boxShadow: '10px 2px 70px black',
-        textAlign: 'center',
+        textAlign: 'left',
         backgroundColor: this.options.flyerSheetColor,
         zIndex: 1,
         lineHeight: this.options.size,
