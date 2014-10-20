@@ -67,7 +67,7 @@ define(function(require, exports, module) {
     /*** Back to KoalaSearchResult ***/
     this.hamburgerSurface = new ImageSurface({
       size: [44, 44],
-      content: 'img/hamburger.png'
+      content: 'img/backArrow.png'
     });
     var hamburgerModifier = new StateModifier({
       origin: [0, 0.5],
