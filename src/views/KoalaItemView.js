@@ -9,7 +9,7 @@ define(function(require, exports, module) {
   var ImageSurface = require('famous/surfaces/ImageSurface');
 
   var KoalaItemPictureView = require('views/KoalaItemPictureView');
-  var FlyerView = require('views/FlyerView');
+  var FlyerViewDisplay = require('views/FlyerViewDisplay');
 
   function KoalaItemView() {
     console.log('KoalaItemView: BEGIN construct');
@@ -116,7 +116,7 @@ define(function(require, exports, module) {
     this.layout.content.add(bodyBackgroundModifier).add(bodyBackgroundSurface);
 
     _getItemPictures.call(this);
-    _createFlyerView.call(this);
+    _createFlyerViewDisplay.call(this);
     _createItemDiscription.call(this);
 
     console.log('KoalaItemView: END _createBody');
@@ -163,27 +163,27 @@ define(function(require, exports, module) {
     console.log('KoalaItemView: END _createItemPictures');
   }
 
-  function _createFlyerView() {
-    console.log('KoalaItemView: BEGIN _createFlyerView');
+  function _createFlyerViewDisplay() {
+    console.log('KoalaItemView: BEGIN _createFlyerViewDisplay');
 
     var width = (window.innerWidth/3);
 
 console.log('HIER');
     console.log(this);
 
-    var flyer = new FlyerView({
+    var flyer = new FlyerViewDisplay({
       flyerItemNumber: this.options.model.maxNumberOfInterested,
       flyerItemContent: 'Ja :)',
     });
 
-    var flyerViewModifier = new StateModifier({
+    var FlyerViewDisplayModifier = new StateModifier({
       origin: [0.5, 0.325],
       align: [0.5, 0.325]
     });
 
-    this.layout.content.add(flyerViewModifier).add(flyer);
+    this.layout.content.add(FlyerViewDisplayModifier).add(flyer);
 
-    console.log('KoalaItemView: END _createFlyerView');
+    console.log('KoalaItemView: END _createFlyerViewDisplay');
 
   }
 

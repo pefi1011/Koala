@@ -1,4 +1,4 @@
-/*** FlyerView.js ***/
+/*** FlyerViewDisplay.js ***/
 
 define(function(require, exports, module) {
   var View = require('famous/core/View');
@@ -10,8 +10,8 @@ define(function(require, exports, module) {
   var FlyerItemView = require('views/FlyerItemView');
 
 
-  function FlyerView() {
-    console.log('FlyerView: BEGIN construct..');
+  function FlyerViewDisplay() {
+    console.log('FlyerViewDisplay: BEGIN construct..');
 
     View.apply(this, arguments);
 
@@ -24,16 +24,15 @@ define(function(require, exports, module) {
     _createFlyerSheet.call(this);
     _createFlyerItems.call(this);
 
-    console.log('FlyerView: END construct..');
+    console.log('FlyerViewDisplay: END construct..');
   }
 
-  FlyerView.prototype = Object.create(View.prototype);
-  FlyerView.prototype.constructor = FlyerView;
+  FlyerViewDisplay.prototype = Object.create(View.prototype);
+  FlyerViewDisplay.prototype.constructor = FlyerViewDisplay;
 
-  FlyerView.DEFAULT_OPTIONS = {
+  FlyerViewDisplay.DEFAULT_OPTIONS = {
     flyerItemNumber: 2,
     flyerItems: undefined,
-    flyerItemContent: 'Yes :)',
     flyerSheetWidth: 200,
     flyerSheetHeight: 110,
     flyerSheetColor: '#f9ec98',
@@ -42,9 +41,9 @@ define(function(require, exports, module) {
     showedInterest: false
   };
 
-  FlyerView.prototype.pullOffFlyerItem = function(flyerItemId) {
+  FlyerViewDisplay.prototype.pullOffFlyerItem = function(flyerItemId) {
 
-    console.log('FlyerView: BEGIN pullOffFlyerItem..');
+    console.log('FlyerViewDisplay: BEGIN pullOffFlyerItem..');
 
     if(!this.showedInterest){
 
@@ -54,21 +53,22 @@ define(function(require, exports, module) {
     else
       alert('You have already pulled off one flyer.');
 
-    console.log('FlyerView: END pullOffFlyerItem..');
+    console.log('FlyerViewDisplay: END pullOffFlyerItem..');
   };
 
-  FlyerView.prototype.putBackFlyerItem = function(flyerItemId) {
+  FlyerViewDisplay.prototype.putBackFlyerItem = function(flyerItemId) {
 
-    console.log('FlyerView: BEGIN putBackFlyerItem..');
+    console.log('FlyerViewDisplay: BEGIN putBackFlyerItem..');
 
        this.flyerItems[flyerItemId].putBack();
        this.showedInterest = false;
 
-    console.log('FlyerView: END putBackFlyerItem..');
+    console.log('FlyerViewDisplay: END putBackFlyerItem..');
   };
 
+
   function _createFlyerSheet() {
-    console.log('FlyerView: BEGIN _createFlyerSheet..');
+    console.log('FlyerViewDisplay: BEGIN _createFlyerSheet..');
 
     var flyerSheet = new Surface({
       content: this.options.flyerSheetContent,
@@ -85,11 +85,11 @@ define(function(require, exports, module) {
     this.mainNode.add(flyerSheet);
 
 
-    console.log('FlyerView: END _createFlyerSheet..');
+    console.log('FlyerViewDisplay: END _createFlyerSheet..');
   }
 
   function _createFlyerItems() {
-    console.log('FlyerView: BEGIN _createFlyerItems..');
+    console.log('FlyerViewDisplay: BEGIN _createFlyerItems..');
 
     this.flyerItems = [];
 
@@ -111,8 +111,7 @@ define(function(require, exports, module) {
 
       var flyer = new FlyerItemView({
         flyerId: i,
-        flyerItemWidth: flyerItemWidthVal,
-        flyerContent: this.options.flyerItemContent
+        flyerItemWidth: flyerItemWidthVal
       });
 
 
@@ -120,22 +119,22 @@ define(function(require, exports, module) {
       // flyer.on('click', this.pullOffFlyerItem.bind(this));
       flyer.on('pullOff', function(flyerItemId) {
 
-        console.log('FlyerView: BEGIN pullOff onEventListener..');
+        console.log('FlyerViewDisplay: BEGIN pullOff onEventListener..');
 
         higherLevel.pullOffFlyerItem(flyerItemId);
 
-        console.log('FlyerView: END pullOff onEventListener..');
+        console.log('FlyerViewDisplay: END pullOff onEventListener..');
 
       });
 
 
       flyer.on('putBack', function(flyerItemId) {
 
-        console.log('FlyerView: BEGIN putBack onEventListener..');
+        console.log('FlyerViewDisplay: BEGIN putBack onEventListener..');
 
         higherLevel.putBackFlyerItem(flyerItemId);
 
-        console.log('FlyerView: END putBack onEventListener..');
+        console.log('FlyerViewDisplay: END putBack onEventListener..');
 
       });
 
@@ -146,8 +145,8 @@ define(function(require, exports, module) {
       node.add(rightModifier).add(flyer);
     }
 
-    console.log('FlyerView: END _createFlyerItems..');
+    console.log('FlyerViewDisplay: END _createFlyerItems..');
   }
 
-  module.exports = FlyerView;
+  module.exports = FlyerViewDisplay;
 });
