@@ -33,6 +33,7 @@ define(function(require, exports, module) {
   FlyerViewDisplay.DEFAULT_OPTIONS = {
     flyerItemNumber: 2,
     flyerItems: undefined,
+    flyerItemContent: 'Ja :)',
     flyerSheetWidth: 200,
     flyerSheetHeight: 110,
     flyerSheetColor: '#f9ec98',
@@ -111,7 +112,8 @@ define(function(require, exports, module) {
 
       var flyer = new FlyerItemView({
         flyerId: i,
-        flyerItemWidth: flyerItemWidthVal
+        flyerItemWidth: flyerItemWidthVal,
+        flyerContent: this.options.flyerItemContent
       });
 
 
