@@ -17,7 +17,14 @@ define(function(require, exports, module) {
     pic1: 'img/koalaPics/tPic1.jpg',
     pic2: 'img/koalaPics/tPic2.jpg',
     pic3: undefined,
-    discription: 'Ikea Tisch zu verschenken..... Hat einige Gebrauchsspuren'
+    discription: 'Ikea Tisch zu verschenken..... Hat einige Gebrauchsspuren',
+    address: {
+      zipCode: 76131,
+      place: 'Karlsruhe',
+      street: 'Musterstraße',
+      streetNumber: '49',
+      streetAddition: 'b'
+    }
     /*
      ..and so on..
     */
