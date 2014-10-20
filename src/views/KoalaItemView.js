@@ -19,6 +19,7 @@ define(function(require, exports, module) {
     _createLayout.call(this);
     _createHeader.call(this);
     _createBody.call(this);
+    _createAddress.call(this);
 
     console.log('KoalaItemView: END construct');
   }
@@ -111,13 +112,12 @@ define(function(require, exports, module) {
     });
     var bodyBackgroundModifier = new StateModifier({
       transform: Transform.behind,
-      size:[undefined,undefined]
+      size: [undefined, undefined]
     });
     this.layout.content.add(bodyBackgroundModifier).add(bodyBackgroundSurface);
 
     _getItemPictures.call(this);
     _createFlyerViewDisplay.call(this);
-    _createItemDiscription.call(this);
 
     console.log('KoalaItemView: END _createBody');
   }
@@ -125,20 +125,20 @@ define(function(require, exports, module) {
   function _getItemPictures() {
     console.log('KoalaItemView: BEGIN _createItemPictures');
 
-    var width = (window.innerWidth/3);
+    var width = (window.innerWidth / 3);
 
     /*** create pictures ***/
     var firstPic = new KoalaItemPictureView({
       pic: this.options.model.pic1,
-      size: [width,width]
+      size: [width, width]
     });
     var secondPic = new KoalaItemPictureView({
       pic: this.options.model.pic2,
-      size: [width,width]
+      size: [width, width]
     });
     var thirdPic = new KoalaItemPictureView({
       // pic: this.options.model.pic3
-      size: [width,width]
+      size: [width, width]
     });
 
     /*** picutres positioning ***/
@@ -166,12 +166,13 @@ define(function(require, exports, module) {
   function _createFlyerViewDisplay() {
     console.log('KoalaItemView: BEGIN _createFlyerViewDisplay');
 
-    var width = (window.innerWidth/3);
+    var width = (window.innerWidth / 3);
 
-console.log('HIER');
+    console.log('HIER');
     console.log(this);
 
     var flyer = new FlyerViewDisplay({
+      flyerSheetContent: this.options.model.discription + '<br><br>Interesse?',
       flyerItemNumber: this.options.model.maxNumberOfInterested,
       flyerItemContent: 'Ja :)',
     });
@@ -187,30 +188,55 @@ console.log('HIER');
 
   }
 
-  function _createItemDiscription() {
-    console.log('KoalaItemView: BEGIN _createItemDiscription');
 
-    var width = 0.9 * window.innerWidth ;
+  function _createAddress() {
 
-    var discriptionSurface = new Surface({
-      content: this.options.model.discription,
-      size: [width,100],
+    var zipSurface = new Surface({
+      size: [undefined, 10],
+      content: 'PLZ: ' + this.options.model.address.zipCode,
       properties: {
-        backgroundColor: 'white',
-        textAlign: 'left',
-
+        color: 'white'
       }
     });
-
-    var discriptioPositionMod = new StateModifier({
-      origin: [0.5, 0.9],
-      align: [0.5, 0.9]
+    var placeSurface = new Surface({
+      size: [undefined, 10],
+      content: 'Ort: ' + this.options.model.address.place,
+      properties: {
+        color: 'white'
+      }
+    });
+    var streetSurface = new Surface({
+      size: [undefined, 10],
+      content: 'Straße: ' + this.options.model.address.street,
+      properties: {
+        color: 'white'
+      }
+    });
+    var mapSurface = new ImageSurface({
+      size: [40, 40],
+      content: 'img/koalaPics/gMaps.jpg',
     });
 
-    this.layout.content.add(discriptioPositionMod).add(discriptionSurface);
 
+    var addressPositionMod = new StateModifier({
+      transform: Transform.translate(8, 325, 0)
+    });
+    var placePositionMod = new StateModifier({
+      transform: Transform.translate(0, 25, 0)
+    });
+    var streetPositionMod = new StateModifier({
+      transform: Transform.translate(0, 50, 0)
+    });
+    var mapPositionMod = new StateModifier({
+      transform: Transform.translate(160, 16, 0)
+    });
 
-    console.log('KoalaItemView: END _createItemDiscription');
+    var node = this.layout.content.add(addressPositionMod);
+    node.add(zipSurface);
+    node.add(placePositionMod).add(placeSurface);
+    node.add(streetPositionMod).add(streetSurface);
+    node.add(mapPositionMod).add(mapSurface);
+
   }
 
   module.exports = KoalaItemView;
