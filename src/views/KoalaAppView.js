@@ -12,16 +12,16 @@ define(function(require, exports, module) {
   var mockupModel = {
 
     owner: 'Musterman',
-    name: 'Tisch',
+    name: 'IKEA Tisch',
     maxNumberOfInterested: 3,
     pic1: 'img/koalaPics/tPic1.jpg',
     pic2: 'img/koalaPics/tPic2.jpg',
     pic3: undefined,
     discription: 'Ikea Tisch zu verschenken..... Hat einige Gebrauchsspuren',
     address: {
-      zipCode: 76131,
-      place: 'Karlsruhe',
-      street: 'Musterstraße',
+      zipCode: 45883,
+      place: 'Gelsenkirchen',
+      street: 'Melanchtonstraße',
       streetNumber: '49',
       streetAddition: 'b'
     }
