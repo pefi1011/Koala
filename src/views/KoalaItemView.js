@@ -19,7 +19,9 @@ define(function(require, exports, module) {
     _createLayout.call(this);
     _createHeader.call(this);
     _createBody.call(this);
+    _getItemPictures.call(this);
     _createAddress.call(this);
+    _createFlyerViewDisplay.call(this);
 
     console.log('KoalaItemView: END construct');
   }
@@ -116,8 +118,6 @@ define(function(require, exports, module) {
     });
     this.layout.content.add(bodyBackgroundModifier).add(bodyBackgroundSurface);
 
-    _getItemPictures.call(this);
-    _createFlyerViewDisplay.call(this);
 
     console.log('KoalaItemView: END _createBody');
   }
@@ -125,20 +125,20 @@ define(function(require, exports, module) {
   function _getItemPictures() {
     console.log('KoalaItemView: BEGIN _createItemPictures');
 
-    var width = (window.innerWidth / 3);
+    this.picWidth = (window.innerWidth / 3);
 
     /*** create pictures ***/
     var firstPic = new KoalaItemPictureView({
       pic: this.options.model.pic1,
-      size: [width, width]
+      size: [this.picWidth, this.picWidth]
     });
     var secondPic = new KoalaItemPictureView({
       pic: this.options.model.pic2,
-      size: [width, width]
+      size: [this.picWidth, this.picWidth]
     });
     var thirdPic = new KoalaItemPictureView({
       // pic: this.options.model.pic3
-      size: [width, width]
+      size: [this.picWidth, this.picWidth]
     });
 
     /*** picutres positioning ***/
@@ -163,34 +163,14 @@ define(function(require, exports, module) {
     console.log('KoalaItemView: END _createItemPictures');
   }
 
-  function _createFlyerViewDisplay() {
-    console.log('KoalaItemView: BEGIN _createFlyerViewDisplay');
-
-    var width = (window.innerWidth / 3);
-
-    console.log('HIER');
-    console.log(this);
-
-    var flyer = new FlyerViewDisplay({
-      flyerSheetContent: this.options.model.discription,
-      flyerItemNumber: this.options.model.maxNumberOfInterested,
-      flyerItemContent: 'Ja :)',
-    });
-
-    var FlyerViewDisplayModifier = new StateModifier({
-      origin: [0.5, 0.325],
-      align: [0.5, 0.325]
-    });
-
-    this.layout.content.add(FlyerViewDisplayModifier).add(flyer);
-
-    console.log('KoalaItemView: END _createFlyerViewDisplay');
-
-  }
-
-
   function _createAddress() {
 
+    console.log('KoalaItemView: BEGINN _createAddress');
+
+    var moveDown = this.picWidth + 10;
+
+    console.log('HIER');
+    console.log(moveDown);
     var streetSurface = new Surface({
       size: [undefined, 10],
       content: this.options.model.address.street,
@@ -214,7 +194,7 @@ define(function(require, exports, module) {
 
 
     var addressPositionMod = new StateModifier({
-      transform: Transform.translate(8, 325, 0)
+      transform: Transform.translate(8,moveDown, 0)
     });
     var streetPositionMod = new StateModifier({
       transform: Transform.translate(45, 0, 0)
@@ -230,6 +210,40 @@ define(function(require, exports, module) {
     node.add(streetPositionMod).add(streetSurface);
     node.add(zipAndPlacePositionMod).add(zipAndPlaceSurface);
     node.add(mapPositionMod).add(mapSurface);
+
+    console.log('KoalaItemView: END _createAddress');
+  }
+
+  function _createFlyerViewDisplay() {
+    console.log('KoalaItemView: BEGIN _createFlyerViewDisplay');
+
+    var moveDown = this.picWidth + 10 + 38 + 15;
+
+    console.log('HIER');
+    console.log(this);
+
+    var flyer = new FlyerViewDisplay({
+      flyerSheetContent: this.options.model.discription,
+      flyerItemNumber: this.options.model.maxNumberOfInterested,
+      flyerItemContent: 'Ja :)',
+      flyerItemPullOffYTranslation: 150
+    });
+
+    var FlyerViewDisplayModifier = new StateModifier({
+      origin: [0.5, 0.0],
+      align: [0.5, 0.0]
+    });
+
+    var moveDownFlyerViewDisplay = new StateModifier({
+      transform: Transform.translate(0, moveDown, 0)
+
+    });
+
+    this.layout.content.add(FlyerViewDisplayModifier)
+    .add(moveDownFlyerViewDisplay)
+    .add(flyer);
+
+    console.log('KoalaItemView: END _createFlyerViewDisplay');
 
   }
 

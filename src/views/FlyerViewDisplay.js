@@ -39,7 +39,8 @@ define(function(require, exports, module) {
     flyerSheetColor: '#f9ec98',
     flyerSheetQuestion: 'Interesse?',
     borderStyle: '1px dashed black',
-    showedInterest: false
+    showedInterest: false,
+    flyerItemPullOffYTranslation: 200
   };
 
   FlyerViewDisplay.prototype.pullOffFlyerItem = function(flyerItemId) {
@@ -147,7 +148,8 @@ define(function(require, exports, module) {
       var flyer = new FlyerItemView({
         flyerId: i,
         flyerItemWidth: flyerItemWidthVal,
-        flyerContent: this.options.flyerItemContent
+        flyerContent: this.options.flyerItemContent,
+        pullOffYTranslation: this.options.flyerItemPullOffYTranslation
       });
 
 
