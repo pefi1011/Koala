@@ -172,7 +172,7 @@ define(function(require, exports, module) {
     console.log(this);
 
     var flyer = new FlyerViewDisplay({
-      flyerSheetContent: this.options.model.discription + '<br><br>Interesse?',
+      flyerSheetContent: this.options.model.discription,
       flyerItemNumber: this.options.model.maxNumberOfInterested,
       flyerItemContent: 'Ja :)',
     });

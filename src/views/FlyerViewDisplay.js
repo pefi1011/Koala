@@ -37,7 +37,7 @@ define(function(require, exports, module) {
     flyerSheetWidth: 200,
     flyerSheetHeight: 110,
     flyerSheetColor: '#f9ec98',
-    flyerSheetContent: '<h1>Interesse?</h1>',
+    flyerSheetQuestion: 'Interesse?',
     borderStyle: '1px dashed black',
     showedInterest: false
   };
@@ -46,12 +46,11 @@ define(function(require, exports, module) {
 
     console.log('FlyerViewDisplay: BEGIN pullOffFlyerItem..');
 
-    if(!this.showedInterest){
+    if (!this.showedInterest) {
 
-       this.flyerItems[flyerItemId].pullOff();
-       this.showedInterest = true;
-    }
-    else
+      this.flyerItems[flyerItemId].pullOff();
+      this.showedInterest = true;
+    } else
       alert('You have already pulled off one flyer.');
 
     console.log('FlyerViewDisplay: END pullOffFlyerItem..');
@@ -61,30 +60,65 @@ define(function(require, exports, module) {
 
     console.log('FlyerViewDisplay: BEGIN putBackFlyerItem..');
 
-       this.flyerItems[flyerItemId].putBack();
-       this.showedInterest = false;
+    this.flyerItems[flyerItemId].putBack();
+    this.showedInterest = false;
 
     console.log('FlyerViewDisplay: END putBackFlyerItem..');
   };
 
-
   function _createFlyerSheet() {
     console.log('FlyerViewDisplay: BEGIN _createFlyerSheet..');
 
-    var flyerSheet = new Surface({
-      content: this.options.flyerSheetContent,
+    var flyerSheetSizeMod = new StateModifier({
       size: [this.options.flyerSheetWidth, this.options.flyerSheetHeight],
+    });
+
+    var flyerSheetBackground = new Surface({
       properties: {
-        borderBottom: this.options.borderStyle,
-        boxShadow: '10px 2px 70px black',
-        textAlign: 'left',
         backgroundColor: this.options.flyerSheetColor,
-        zIndex: 1,
-        lineHeight: this.options.size,
+        boxShadow: '10px 2px 70px black',
+        borderBottom: this.options.borderStyle
       }
     });
-    this.mainNode.add(flyerSheet);
 
+    var border = 4;
+    var flyerInputWidth = this.options.flyerSheetWidth - 2 * border;
+    var flyerContentHeight = 0.8;
+
+    var flyerSheetContent = new Surface({
+      content: this.options.flyerSheetContent,
+      size: [flyerInputWidth, this.options.flyerSheetHeight * flyerContentHeight],
+      properties: {
+        textAlign: 'left',
+        zIndex: 1,
+      }
+    });
+
+    var flyerSheetContentModifier = new StateModifier({
+      origin: [0.5, 0],
+      align: [0.5, 0],
+      transform: Transform.translate(0, border, 1)
+    });
+
+    var flyerSheetQuestion = new Surface({
+      content: this.options.flyerSheetQuestion,
+      size: [flyerInputWidth, this.options.flyerSheetHeight * (1-flyerContentHeight)],
+      properties: {
+        textAlign: 'center',
+        zIndex: 1,
+      }
+    });
+
+    var flyerSheetQuestionModifier = new StateModifier({
+      origin: [0.5, 0],
+      align: [0.5, 0],
+      transform: Transform.translate(0, (this.options.flyerSheetHeight * flyerContentHeight) - border , 1)
+    });
+
+    var flyerSheetNode = this.mainNode.add(flyerSheetSizeMod);
+    flyerSheetNode.add(flyerSheetBackground);
+    flyerSheetNode.add(flyerSheetContentModifier).add(flyerSheetContent);
+    flyerSheetNode.add(flyerSheetQuestionModifier).add(flyerSheetQuestion);
 
     console.log('FlyerViewDisplay: END _createFlyerSheet..');
   }
