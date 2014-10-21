@@ -191,29 +191,24 @@ define(function(require, exports, module) {
 
   function _createAddress() {
 
-    var zipSurface = new Surface({
-      size: [undefined, 10],
-      content: 'PLZ: ' + this.options.model.address.zipCode,
-      properties: {
-        color: 'white'
-      }
-    });
-    var placeSurface = new Surface({
-      size: [undefined, 10],
-      content: 'Ort: ' + this.options.model.address.place,
-      properties: {
-        color: 'white'
-      }
-    });
     var streetSurface = new Surface({
       size: [undefined, 10],
-      content: 'Straße: ' + this.options.model.address.street,
+      content: this.options.model.address.street,
       properties: {
         color: 'white'
       }
     });
+
+    var zipAndPlaceSurface = new Surface({
+      size: [undefined, 10],
+      content: this.options.model.address.zipCode + ' ' + this.options.model.address.place,
+      properties: {
+        color: 'white'
+      }
+    });
+
     var mapSurface = new ImageSurface({
-      size: [40, 40],
+      size: [38, 38],
       content: 'img/koalaPics/gMaps.jpg',
     });
 
@@ -221,20 +216,19 @@ define(function(require, exports, module) {
     var addressPositionMod = new StateModifier({
       transform: Transform.translate(8, 325, 0)
     });
-    var placePositionMod = new StateModifier({
-      transform: Transform.translate(0, 25, 0)
-    });
     var streetPositionMod = new StateModifier({
-      transform: Transform.translate(0, 50, 0)
+      transform: Transform.translate(45, 0, 0)
+    });
+    var zipAndPlacePositionMod = new StateModifier({
+      transform: Transform.translate(45, 24, 0)
     });
     var mapPositionMod = new StateModifier({
-      transform: Transform.translate(160, 16, 0)
+      transform: Transform.translate(0, 3, 0)
     });
 
     var node = this.layout.content.add(addressPositionMod);
-    node.add(zipSurface);
-    node.add(placePositionMod).add(placeSurface);
     node.add(streetPositionMod).add(streetSurface);
+    node.add(zipAndPlacePositionMod).add(zipAndPlaceSurface);
     node.add(mapPositionMod).add(mapSurface);
 
   }
