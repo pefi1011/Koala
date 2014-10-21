@@ -33,6 +33,7 @@ define(function(require, exports, module) {
   };
 
   function _createBackground() {
+    
     var background = new Surface({
       properties: {
         backgroundColor: '#FFFFF5',
