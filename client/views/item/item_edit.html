@@ -1,0 +1,40 @@
+<template name="itemEdit">
+  <!-- {{#with post}}  We don't need that in the new version anymore-->
+  <form class="main">
+    <div class="control-group">
+      <label class="control-label" for="title">Title</label>
+      <div class="controls">
+        <input type="text" name="title" value="{{title}}" placeholder="Was schenkst du?" />
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label" for="description">Beschreibung</label>
+      <div class="controls">
+        <input type="text" name="description" value="{{description}}" placeholder="" />
+      </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="location">Standort</label>
+        <div class="controls">
+            <input name="location" type="text" value="{{location}}" placeholder="Wo bisch?"/>
+        </div>
+    </div>
+
+    <div class="control-group">
+      <div class="controls">
+        <input type="submit" class="btn btn-primary submit" value="Submit">
+      </div>
+    </div>
+
+    <hr/>
+
+    <div class="control-group">
+      <div class="controls">
+        <a class="btn btn-danger delete" href="#">Delete item</a>
+      </div>
+    </div>
+  </form>
+  <!-- {{/with}} We don't need that in the new version anymore-->
+</template>

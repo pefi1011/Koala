@@ -1,0 +1,24 @@
+<template name="itemEntry">
+  <div class="item">
+    <div class="item-content">
+      <a href="{{pathFor 'itemPage'}}">
+
+        {{#if itemPhoto1}}
+          <img src="{{itemPhoto1}}" width="100px" height="100px" class="img-rounded" alt="Rounded Image"/>
+        {{else}}
+          <img src="images/125x125.jpg" width="100px" height="100px" class="img-rounded" alt="Rounded Image"/>
+        {{/if}}
+        </a>
+      <h3><a href="{{url}}">{{title}}</a><span>{{description}}</span></h3>
+      <p>
+        in {{location}}
+      </p>
+      <p>
+        eingestellt von <em>{{author}}</em>
+        {{#if ownItem}}<a href="{{pathFor 'itemEdit'}}">Edit</a>{{/if}}
+      </p>
+    </div>
+    <!-- <a href="{{pathFor 'itemPage'}}" class="discuss btn">Discuss</a> -->
+    <span class="badge info discuss">Anzahl Abreisszettel {{tearoffs}}</span>
+  </div>
+</template>
