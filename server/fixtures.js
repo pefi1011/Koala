@@ -92,4 +92,16 @@ if (Items.find().count() === 0) {
     submitted: now - 3 * 3600 * 1000,
     body: 'Die Tür fehlt.. sonst sieht er wie neu aus!!!'
   });
+
+  for (var i = 0; i<20; i++ ) {
+    Items.insert({
+      userId: koala._id,
+      author: koala.username,
+      title: 'Test' + i,
+      description: 'test',
+      location: 'test',
+      tearoffs: 12,
+      commentsCount: 0
+    });
+  }
 }

@@ -1,5 +1,9 @@
-Meteor.publish('items', function() {
-  return Items.find();
+Meteor.publish('items', function(options) {
+  return Items.find({}, options);
+});
+
+Meteor.publish('singleItem', function(id) {
+  return id && Items.find(id);
 });
 
 Meteor.publish('comments', function(itemId) {

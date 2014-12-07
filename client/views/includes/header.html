@@ -30,24 +30,25 @@
             </span>
             </a>
           </li>
-          <li class="dropdown">
-              {{> notifications}}
-          </li>
           {{/if}}
 
           <!-- search bar -->
           <li>
-
-
-        <!-- here should be {{pathFor 'itemSearch param'}}</a>  -->
+            <!-- here should be {{pathFor 'itemSearch param'}}</a>  -->
             <a href="{{pathFor 'itemsList'}}" >
               <span class="glyphicon glyphicon glyphicon-search"
                      aria-hidden="true">
              </span>
             </a>
-
-
           </li>
+
+          <!-- notifications icon with dropdwon functionality -->
+          {{#if currentUser}}
+          <li class="dropdown">
+              {{> notifications}}
+          </li>
+          {{/if}}
+
         </ul>
 
         <!-- login dropdwon -->
