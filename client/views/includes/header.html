@@ -3,19 +3,24 @@
     <div class="container-fluid">
       <div class="navbar-header">
 
-        <button type="button" class="navbar-toggle collapsed"
+        <!-- <button type="button" class="navbar-toggle collapsed"
                 data-toggle="collapse" data-target="#navigation">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-        </button>
+        </button> -->
+
+        <<!-->Koala icon</!-->
         <a class="navbar-brand" href="{{pathFor 'itemsList'}}">
           <img alt="Brand" src="images/koala.png">
         </a>
       </div>
 
+      <<!-->Navigation in header</!-->
       <div class="collapse navbar-collapse" id="navigation">
+
+        <<!-->allowed logged in users to create new items </!-->
         <ul class="nav navbar-nav">
           {{#if currentUser}}
           <li>
@@ -24,6 +29,7 @@
           {{/if}}
         </ul>
 
+        <<!-->login dropdwon </!-->
         <ul class="nav navbar-nav navbar-right">
           {{> loginButtons}}
         </ul>
