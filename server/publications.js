@@ -5,3 +5,7 @@ Meteor.publish('items', function() {
 Meteor.publish('comments', function(itemId) {
   return Comments.find({itemId: itemId});
 });
+
+Meteor.publish('notifications', function() {
+  return Notifications.find({userId: this.userId});
+});
