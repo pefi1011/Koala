@@ -1,9 +1,10 @@
 
 Template.itemSubmit.rendered = function() {
   Session.set('itemPhotos', []);
-}
+};
 
 Template.itemSubmit.events({
+  
   'click .take-photo': function () {
     MeteorCamera.getPicture(function (error, data) {
       // we have a picture
@@ -28,7 +29,7 @@ Template.itemSubmit.events({
       location: $(e.target).find('[name=location]').val(),
       tearoffs: $(e.target).find('[name=tearoffs]').val(),
       itemPhotos: Session.get('itemPhotos')
-    }
+    };
 
     Meteor.call('item', item, function(error, id){
       if (error) {
@@ -68,21 +69,23 @@ Template.itemSubmit.events({
 
 Template.itemSubmit.helpers({
   itemPhoto1: function () {
-    var itemPhotos = Session.get("itemPhotos")
+    var itemPhotos = Session.get("itemPhotos");
     if (itemPhotos && itemPhotos[0]) {
       return itemPhotos[0];
     }
     return null;
   },
+
   itemPhoto2: function () {
-    var itemPhotos = Session.get("itemPhotos")
+    var itemPhotos = Session.get("itemPhotos");
     if (itemPhotos && itemPhotos[1]) {
       return itemPhotos[1];
     }
     return null;
   },
+
   itemPhoto3: function () {
-    var itemPhotos = Session.get("itemPhotos")
+    var itemPhotos = Session.get("itemPhotos");
     if (itemPhotos && itemPhotos[2]) {
       return itemPhotos[2];
     }

@@ -11,16 +11,16 @@
           <span class="icon-bar"></span>
         </button> -->
 
-        <<!-->Koala icon</!-->
+        <!--  Koala icon -->
         <a class="navbar-brand" href="{{pathFor 'itemsList'}}">
           <img alt="Brand" src="images/koala.png">
         </a>
       </div>
 
-      <<!-->Navigation in header</!-->
+      <!-- Navigation in header -->
       <div class="collapse navbar-collapse" id="navigation">
 
-        <<!-->allowed logged in users to create new items </!-->
+        <!-- allowed logged in users to create new items -->
         <ul class="nav navbar-nav">
           {{#if currentUser}}
           <li>
@@ -29,7 +29,7 @@
           {{/if}}
         </ul>
 
-        <<!-->login dropdwon </!-->
+        <!-- login dropdwon -->
         <ul class="nav navbar-nav navbar-right">
           {{> loginButtons}}
         </ul>
