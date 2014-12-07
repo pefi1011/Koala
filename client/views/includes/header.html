@@ -17,16 +17,34 @@
         </a>
       </div>
 
-      <!-- Navigation in header -->
+      <!-- icons in header -->
       <div class="collapse navbar-collapse" id="navigation">
 
         <!-- allowed logged in users to create new items -->
         <ul class="nav navbar-nav">
           {{#if currentUser}}
           <li>
-            <a href="{{pathFor 'itemSubmit'}}">Submit new item</a>
+            <a href="{{pathFor 'itemSubmit'}}">
+              <span class="glyphicon glyphicon glyphicon-plus"
+              aria-hidden="true">
+            </span>
+            </a>
           </li>
           {{/if}}
+
+          <!-- search bar -->
+          <li>
+
+
+        <!-- here should be {{pathFor 'itemSearch param'}}</a>  -->
+            <a href="{{pathFor 'itemsList'}}" >
+              <span class="glyphicon glyphicon glyphicon-search"
+                     aria-hidden="true">
+             </span>
+            </a>
+
+
+          </li>
         </ul>
 
         <!-- login dropdwon -->
