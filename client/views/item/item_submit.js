@@ -4,8 +4,9 @@ Template.itemSubmit.rendered = function() {
 };
 
 Template.itemSubmit.events({
-  
+
   'click .take-photo': function () {
+
     MeteorCamera.getPicture(function (error, data) {
       // we have a picture
       if (! error) {
@@ -23,7 +24,7 @@ Template.itemSubmit.events({
   'submit form': function(e) {
     e.preventDefault();
 
-    var item = {
+    var newItem = {
       title: $(e.target).find('[name=title]').val(),
       description: $(e.target).find('[name=description]').val(),
       location: $(e.target).find('[name=location]').val(),
@@ -31,14 +32,25 @@ Template.itemSubmit.events({
       itemPhotos: Session.get('itemPhotos')
     };
 
-    Meteor.call('item', item, function(error, id){
+    // call submitItem method to insert the item
+    Meteor.call('submitItem', newItem, function(error, id){
+
+      // TODO finish error handling
       if (error) {
         return alert(error.reason);
+
+      }
+      else {
+        // there where no errors, item was saved
+        // so go to itemPage to see the item
+
+        Router.go('itemPage', {
+          _id: id
+        });
       }
 
   });
 
-  Router.go('itemsList');
 },
 
   'click .delete-photo1': function(e) {
