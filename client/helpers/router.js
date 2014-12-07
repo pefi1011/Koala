@@ -2,7 +2,7 @@ Router.configure({
   layoutTemplate: 'layout',
   loadingTemplate: 'loading',
   waitOn: function() {
-    return Meteor.subscribe('items');
+    return [Meteor.subscribe('items'), Meteor.subscribe('comments')];
   }
 });
 

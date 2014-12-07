@@ -17,6 +17,9 @@
         eingestellt von <em>{{author}}</em>
         {{#if ownItem}}<a href="{{pathFor 'itemEdit'}}">Edit</a>{{/if}}
       </p>
+      <p>
+        <a href="{{pathFor 'itemPage'}}">{{commentsCount}} comments</a>
+      </p>
     </div>
     <!-- <a href="{{pathFor 'itemPage'}}" class="discuss btn">Discuss</a> -->
     <span class="badge info discuss">Anzahl Abreisszettel {{tearoffs}}</span>
