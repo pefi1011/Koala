@@ -14,10 +14,6 @@ Template.itemEntry.helpers({
       return photos[0];
     }
     return null;
-  },
-
-  commentsCount: function() {
-    return Comments.find({itemId: this._id}).count();
   }
-
+  
 });

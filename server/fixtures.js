@@ -44,7 +44,8 @@ if (Items.find().count() === 0) {
     title: 'Ferd',
     description: '...umfallt',
     location: 'Stuttgart',
-    tearoffs: 8
+    tearoffs: 8,
+    commentsCount: 1
   });
 
   var item2Id = Items.insert({
@@ -53,7 +54,8 @@ if (Items.find().count() === 0) {
     title: 'Schrank',
     description: 'gebraucht',
     location: 'Karlsruhe',
-    tearoffs: 12
+    tearoffs: 12,
+    commentsCount: 2
   });
 
   var item3Id = Items.insert({
@@ -62,7 +64,8 @@ if (Items.find().count() === 0) {
     title: 'Kaktus',
     description: '...autsch',
     location: 'München',
-    tearoffs: 10
+    tearoffs: 10,
+    commentsCount: 0
   });
 
 
