@@ -6,17 +6,14 @@ Template.itemSubmit.rendered = function() {
 Template.itemSubmit.events({
 
   'click .take-photo': function () {
-
     MeteorCamera.getPicture(function (error, data) {
       // we have a picture
       if (! error) {
+
+        // get array of current pictures
         var tempPhotos = Session.get('itemPhotos');
-        //  if (tempPhotos[2] != null){
-        //   alert("JUNGEEEEE");
-        // } else {
           tempPhotos.push(data);
           Session.set('itemPhotos', tempPhotos );
-        // }
       }
     });
   },
@@ -25,12 +22,14 @@ Template.itemSubmit.events({
     e.preventDefault();
 
     // get the data out of form
+    var itemPhotos =  Session.get('itemPhotos');
+debugger
     var newItem = {
       title: $(e.target).find('[name=title]').val(),
       description: $(e.target).find('[name=description]').val(),
       location: $(e.target).find('[name=location]').val(),
       tearoffs: $(e.target).find('[name=tearoffs]').val(),
-      itemPhotos: Session.get('itemPhotos')
+      thumbnail: itemPhotos[0]
     };
 
     // call submitItem method to insert the item
@@ -49,9 +48,9 @@ Template.itemSubmit.events({
         });
       }
 
-  });
+    });
 
-},
+  },
 
   'click .delete-photo1': function(e) {
     e.preventDefault();
@@ -61,6 +60,7 @@ Template.itemSubmit.events({
       Session.set('itemPhotos', [photosTemp[1], photosTemp[2]]);
     }
   },
+
   'click .delete-photo2': function(e) {
     e.preventDefault();
 
@@ -69,6 +69,7 @@ Template.itemSubmit.events({
       Session.set('itemPhotos', [photosTemp[0], photosTemp[2]]);
     }
   },
+
   'click .delete-photo3': function(e) {
     e.preventDefault();
 
@@ -80,6 +81,7 @@ Template.itemSubmit.events({
 });
 
 Template.itemSubmit.helpers({
+
   itemPhoto1: function () {
     var itemPhotos = Session.get("itemPhotos");
     if (itemPhotos && itemPhotos[0]) {

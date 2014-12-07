@@ -1,6 +1,5 @@
 <template name="itemSubmit">
   <form class="main">
-
     <!-- item title -->
     <div class="control-group">
       <label class="control-label" for="title">Titel</label>
@@ -14,114 +13,136 @@
       <label class="control-label" for="description">Beschreibung</label>
       <div class="controls">
         <textarea name="description" type="text"
-                  placeholder="Bitte beschreibe dein zu verschenkenden Gegenstand"
-                  rows ="4">
-        </textarea>
-      </div>
+        placeholder="Bitte beschreibe dein zu verschenkenden Gegenstand..."
+        rows ="4">
+      </textarea>
     </div>
+  </div>
 
-    <!-- item location -->
-    <div class="control-group">
-      <label class="control-label" for="location">Standort</label>
-      <div class="controls">
-        <input name="location" type="text" value="" placeholder="Wo bisch?" />
-      </div>
+  <!-- item location -->
+  <div class="control-group">
+    <label class="control-label" for="location">Standort</label>
+    <div class="controls">
+      <input name="location" type="text" value="" placeholder="Wo bisch?" />
     </div>
+  </div>
 
-    <!-- set flyers number -->
-    <div class="control-group">
-      <label class="control-label" for="tearoffs">Anzahl Abreiszettel</label>
-      <div class="controls">
-        <input name="tearoffs" type="number" min="1" max="10" step="1" value="2" />
-      </div>
+  <!-- set flyers number -->
+  <div class="control-group">
+    <label class="control-label" for="tearoffs">Anzahl Abreiszettel</label>
+    <div class="controls">
+      <input name="tearoffs" type="number" min="1" max="10" step="1" value="2" />
     </div>
+  </div>
 
-    <!-- add pictures -->
-    <div class="control-group">
-      <div class="controls">
-
-        <!-- add main picture -->
-        <button type="button"
-                class="btn btn-default take-photo"
-                aria-label="Take Photo">
-
-          <span class="glyphicon glyphicon glyphicon-camera"
-                aria-hidden="true">
-          </span>
-        </button>
-
-        <!-- add second picture -->
-        <button type="button"
-                class="btn btn-default take-photo"
-                aria-label="Take Photo">
-
-          <span class="glyphicon glyphicon glyphicon-camera"
-                aria-hidden="true">
-          </span>
-        </button>
-
-        <!-- add third picture -->
-        <button type="button"
-                class="btn btn-default take-photo"
-                aria-label="Take Photo">
-
-          <span class="glyphicon glyphicon glyphicon-camera"
-                aria-hidden="true">
-          </span>
-        </button>
-      </div>
-    </div>
-
-    <!-- show pictures -->
-
-    {{#if itemPhoto1}}
+    <!-- take and show pictures -->
     <div class="row">
+
+      <!-- first pic -->
       <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="{{itemPhoto1}}" alt="">
-          <div class="caption">
-            <p>
+
+        <!-- if the picture doesnt exist, show camera icon -->
+        {{#unless itemPhoto1}}
+
+          <button type="button"
+                  class="btn btn-default take-photo"
+                  aria-label="Take Photo">
+            <span class="glyphicon glyphicon glyphicon-camera"
+                  aria-hidden="true">
+            </span>
+         </button>
+
+        {{/unless}}
+
+        <!-- if the pic exists, show it -->
+        {{#if itemPhoto1}}
+          <div class="thumbnail">
+
+            <img src="{{itemPhoto1}}" alt="Hauptbild">
+
+            <div class="caption">
               <a href="#" class="btn btn-primary delete-photo1"
-                 role="button">Bild erneut aufnehmen
+                role="button">Bild erneut aufnehmen
               </a>
               <a href="#" class="btn btn-danger delete-photo1"
                  role="button">Bild löschen
               </a>
-            </p>
+            </div>
           </div>
+            {{/if}}
         </div>
-      </div>
-    </div>
-    {{/if}}
 
-<!--     {{#if itemPhoto2}}
-<div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img src="{{itemPhoto2}}" alt="">
-      <div class="caption">
-        <p><a href="#" class="btn btn-danger delete-photo2" role="button">Bild löschen</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-{{/if}} -->
+      <!-- second pic -->
+      <div class="col-sm-6 col-md-4">
 
-<!--     {{#if itemPhoto3}}
-<div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img src="{{itemPhoto3}}" alt="">
-      <div class="caption">
-        <p><a href="#" class="btn btn-danger delete-photo3" role="button">Bild löschen</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-{{/if}}
- -->
+        <!-- if the picture doesnt exist, show camera icon -->
+        {{#unless itemPhoto2}}
 
-    <!-- submit button pictures -->
+          <button type="button"
+                  class="btn btn-default take-photo"
+                  aria-label="Take Photo">
+            <span class="glyphicon glyphicon glyphicon-camera"
+                  aria-hidden="true">
+            </span>
+         </button>
+
+        {{/unless}}
+
+        <!-- if the pic exists, show it -->
+        {{#if itemPhoto2}}
+          <div class="thumbnail">
+
+            <img src="{{itemPhoto2}}" alt="Hauptbild">
+
+            <div class="caption">
+              <a href="#" class="btn btn-primary delete-photo2"
+                role="button">Bild erneut aufnehmen
+              </a>
+              <a href="#" class="btn btn-danger delete-photo2"
+                 role="button">Bild löschen
+              </a>
+            </div>
+          </div>
+            {{/if}}
+        </div>
+
+      <!-- third pic -->
+      <div class="col-sm-6 col-md-4">
+
+        <!-- if the picture doesnt exist, show camera icon -->
+        {{#unless itemPhoto3}}
+
+          <button type="button"
+                  class="btn btn-default take-photo"
+                  aria-label="Take Photo">
+            <span class="glyphicon glyphicon glyphicon-camera"
+                  aria-hidden="true">
+            </span>
+         </button>
+
+        {{/unless}}
+
+        <!-- if the pic exists, show it -->
+        {{#if itemPhoto3}}
+          <div class="thumbnail">
+
+            <img src="{{itemPhoto3}}" alt="Hauptbild">
+
+            <div class="caption">
+              <a href="#" class="btn btn-primary delete-photo3"
+                role="button">Bild erneut aufnehmen
+              </a>
+              <a href="#" class="btn btn-danger delete-photo3"
+                 role="button">Bild löschen
+              </a>
+            </div>
+          </div>
+            {{/if}}
+        </div>
+    </div>
+
+
+    <!-- submit button -->
     <div class="control-group">
       <div class="controls">
         <input type="submit" value="Submit" class="btn btn-success" />
