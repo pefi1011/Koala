@@ -24,6 +24,7 @@ Template.itemSubmit.events({
   'submit form': function(e) {
     e.preventDefault();
 
+    // get the data out of form
     var newItem = {
       title: $(e.target).find('[name=title]').val(),
       description: $(e.target).find('[name=description]').val(),
@@ -43,7 +44,6 @@ Template.itemSubmit.events({
       else {
         // there where no errors, item was saved
         // so go to itemPage to see the item
-
         Router.go('itemPage', {
           _id: id
         });
