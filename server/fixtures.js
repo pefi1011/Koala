@@ -11,6 +11,17 @@ if (Items.find().count() === 0) {
     }
   });
 
+  var pandaId = Accounts.createUser({
+    username: 'Tigerrr',
+    email: 'tigerrr@zoo.de',
+    password: 'Tigerrr',
+    profile: {
+    first_name: 'Shin',
+    last_name: 'Kann',
+    company: 'Karlsruher Zoo',
+    }
+  });
+
   var koalaId = Accounts.createUser({
     username: 'koalaa',
     email: 'koalaa@zoo.de',
