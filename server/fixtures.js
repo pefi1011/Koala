@@ -39,7 +39,7 @@ if (Items.find().count() === 0) {
   var item2Id = Items.insert({
     userId: koala._id,
     author: koala.username,
-    title: 'Serbe',
+    title: 'Schrank',
     description: 'gebraucht',
     location: 'Karlsruhe',
     tearoffs: 12
@@ -68,7 +68,7 @@ if (Items.find().count() === 0) {
     userId: koala._id,
     author: koala.username,
     submitted: now - 3 * 3600 * 1000,
-    body: 'Hat der Serbe gabrauchsspurren'
+    body: 'Hat der Schrank gabrauchsspurren'
   });
 
   Comments.insert({
@@ -76,6 +76,6 @@ if (Items.find().count() === 0) {
     userId: panda._id,
     author: panda.username,
     submitted: now - 3 * 3600 * 1000,
-    body: 'Seine rechte Elbogen ist arg verletzt... sonst sieht er wie neu aus!!!'
+    body: 'Die Tür fehlt.. sonst sieht er wie neu aus!!!'
   });
 }
