@@ -1,17 +1,23 @@
 <template name="itemEntry">
   <div class="item">
+
     <div class="item-content">
       <a href="{{pathFor 'itemPage'}}">
 
+    <!-- if no thumbnail (what should never be the case)
+         show static image-->
         {{#if thumbnail}}
-          <img src="{{thumbnail}}" width="100px" height="100px" class="img-rounded" alt="Rounded Image"/>
+          <img src="{{thumbnail}}" width="100px" height="100px"
+               class="img-rounded" alt="Rounded Image"/>
         {{else}}
-          <img src="images/125x125.jpg" width="100px" height="100px" class="img-rounded" alt="Rounded Image"/>
+          <img src="images/125x125.jpg" width="100px"
+               height="100px" class="img-rounded" alt="Rounded Image"/>
         {{/if}}
-        </a>
-      <h3><a href="{{url}}">{{title}}</a><span>{{description}}</span></h3>
+      </a>
+
+      <h3><a href="{{url}}">{{title}}</a></h3>
       <p>
-        eingestellt von <em>{{author}}</em> in {{location}}
+        {{location}}
         {{#if ownItem}}<a href="{{pathFor 'itemEdit'}}">Edit</a>{{/if}}
       </p>
       <p>
