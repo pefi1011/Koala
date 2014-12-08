@@ -29,11 +29,10 @@ Template.itemSubmit.events({
       description: $(e.target).find('[name=description]').val(),
       location: $(e.target).find('[name=location]').val(),
       tearoffs: $(e.target).find('[name=tearoffs]').val(),
-      thumbnail: itemPhotos[0] //TODO create thumbnail out of pic. Probably the thumbnail creation should happen on the server side
     };
 
     // call submitItem method to insert the item
-    Meteor.call('submitItem', newItem,itemPhotos, function(error, id){
+    Meteor.call('submitItem', newItem, itemPhotos, function(error, id){
 
       // TODO finish error handling
       if (error) {
