@@ -6,7 +6,7 @@ Template.itemPage.helpers({
 
   photos: function(){
 
-    return Pictures.find({itemId: this._id});
+    return Photos.find({itemId: this._id});
   },
 
   submittedText: function() {

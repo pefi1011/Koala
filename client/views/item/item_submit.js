@@ -10,7 +10,7 @@ Template.itemSubmit.events({
       // we have a picture
       if (! error) {
 
-        // get array of current pictures
+        // get array of current photos
         var tempPhotos = Session.get('itemPhotos');
           tempPhotos.push(data);
           Session.set('itemPhotos', tempPhotos );
@@ -29,7 +29,7 @@ Template.itemSubmit.events({
       tearoffs: $(e.target).find('[name=tearoffs]').val(),
     };
 
-    // get pictures
+    // get photos
     var itemPhotos =  Session.get('itemPhotos');
 
     // call submitItem method to insert the item

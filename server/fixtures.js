@@ -2,14 +2,23 @@ if (Items.find().count() === 0) {
 
   // INSERT USERS
 
+  var hundImBuro = Accounts.createUser({
+    username: 'hund_im_buero',
+    email: 'hund_im_buero@stromberg.de',
+    password: 'hund_im_buero',
+    profile: {
+      first_name: 'Pit Bull',
+      last_name: 'Terrier',
+    }
+  });
+
   var pandaId = Accounts.createUser({
     username: 'pandaa',
     email: 'panda@zoo.de',
     password: 'pandaa',
     profile: {
-    first_name: 'Lazy',
-    last_name: 'Ninja',
-    company: 'Karlsruher Zoo',
+      first_name: 'Lazy',
+      last_name: 'Ninja',
     }
   });
 
@@ -18,9 +27,8 @@ if (Items.find().count() === 0) {
     email: 'tigerrr@zoo.de',
     password: 'Tigerrr',
     profile: {
-    first_name: 'Shin',
-    last_name: 'Kann',
-    company: 'Karlsruher Zoo',
+      first_name: 'Shin',
+      last_name: 'Kann',
     }
   });
 
@@ -29,9 +37,8 @@ if (Items.find().count() === 0) {
     email: 'koalaa@zoo.de',
     password: 'koalaa',
     profile: {
-    first_name: 'Lazy',
-    last_name: 'Ninja',
-    company: 'Karlsruher Zoo',
+      first_name: 'Lazy',
+      last_name: 'Ninja',
     }
   });
 
@@ -65,9 +72,9 @@ if (Items.find().count() === 0) {
     body: 'Wie oft fällt denn der Ferd um?'
   });
 
-  // pictures
+  // photos
   // item1
-  Pictures.insert(
+  Photos.insert(
     {
       itemId: item1Id,
       position: 0,
@@ -75,7 +82,7 @@ if (Items.find().count() === 0) {
     }
   );
 
-  Pictures.insert(
+  Photos.insert(
     {
       itemId: item1Id,
       position: 1,
@@ -114,8 +121,8 @@ if (Items.find().count() === 0) {
   });
 
 
-  // pictures
-  Pictures.insert(
+  // photos
+  Photos.insert(
     {
       itemId: item2Id,
       position: 0,
@@ -138,8 +145,8 @@ if (Items.find().count() === 0) {
 
   // comments
 
-  // pictures
-  Pictures.insert(
+  // photos
+  Photos.insert(
     {
       itemId: item3Id,
       position: 0,
@@ -147,7 +154,7 @@ if (Items.find().count() === 0) {
     }
   );
 
-  Pictures.insert(
+  Photos.insert(
     {
       itemId: item3Id,
       position: 1,
@@ -155,7 +162,7 @@ if (Items.find().count() === 0) {
     }
   );
 
-  Pictures.insert(
+  Photos.insert(
     {
       itemId: item3Id,
       position: 2,
@@ -164,15 +171,15 @@ if (Items.find().count() === 0) {
   );
 
   // ITEM 5 - 24 -
-  for (var i = 5; i<25; i++ ) {
-    Items.insert({
-      userId: koala._id,
-      author: koala.username,
-      title: 'Test' + i,
-      description: 'test',
-      location: 'test',
-      tearoffs: 12,
-      commentsCount: 0
-    });
-  }
+  // for (var i = 5; i<25; i++ ) {
+  //   Items.insert({
+  //     userId: koala._id,
+  //     author: koala.username,
+  //     title: 'Test' + i,
+  //     description: 'test',
+  //     location: 'test',
+  //     tearoffs: 12,
+  //     commentsCount: 0
+  //   });
+  // }
 }
