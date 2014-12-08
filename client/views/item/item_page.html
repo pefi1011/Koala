@@ -3,21 +3,19 @@
 
   {{> itemEntry}}
 
-Author: {{author}}
-Title: {{title}}
-Beschreibung: {{description}}
-Lokation: {{location}}
-Submitted {{submitted}}
+<h2>Title: {{title}}</h2>
+Beschreibung: {{description}}  <br/>
+Lokation: {{location}}  <br/>
+Author: {{author}} <br/>
+Erstellt am: {{submittedText}}  <br/>
 
-<p>
-  pics:
-  <ul >
+
+  <ul>
     {{#each photos}}
     {{> photo}}
     {{/each}}
   </ul>
 
-</p>
 
   <!-- show comments -->
   <ul class="comments">

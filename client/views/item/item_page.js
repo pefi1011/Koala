@@ -7,5 +7,9 @@ Template.itemPage.helpers({
   photos: function(){
 
     return Pictures.find({itemId: this._id});
+  },
+
+  submittedText: function() {
+    return new Date(this.submitted).toString();
   }
 });
