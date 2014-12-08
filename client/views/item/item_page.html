@@ -1,12 +1,32 @@
 <template name="itemPage">
+
+
   {{> itemEntry}}
 
+Author: {{author}}
+Title: {{title}}
+Beschreibung: {{description}}
+Lokation: {{location}}
+Submitted {{submitted}}
+
+<p>
+  pics:
+  <ul >
+    {{#each photos}}
+    {{> photo}}
+    {{/each}}
+  </ul>
+
+</p>
+
+  <!-- show comments -->
   <ul class="comments">
     {{#each comments}}
       {{> comment}}
     {{/each}}
   </ul>
 
+  <!-- add a comment if logged in -->
   {{#if currentUser}}
       {{> commentSubmit}}
     {{else}}

@@ -22,14 +22,15 @@ Template.itemSubmit.events({
     e.preventDefault();
 
     // get the data out of form
-    var itemPhotos =  Session.get('itemPhotos');
-
     var newItem = {
       title: $(e.target).find('[name=title]').val(),
       description: $(e.target).find('[name=description]').val(),
       location: $(e.target).find('[name=location]').val(),
       tearoffs: $(e.target).find('[name=tearoffs]').val(),
     };
+
+    // get pictures
+    var itemPhotos =  Session.get('itemPhotos');
 
     // call submitItem method to insert the item
     Meteor.call('submitItem', newItem, itemPhotos, function(error, id){
