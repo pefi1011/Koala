@@ -5,6 +5,8 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">{{title}}</h3>
+      
+      {{#if ownItem}}<a href="{{pathFor 'itemEdit'}}">Edit</a>{{/if}}
     </div>
     <div class="panel-body">
       Beschreibung: {{description}}  <br/>

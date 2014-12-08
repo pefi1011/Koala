@@ -11,5 +11,9 @@ Template.itemPage.helpers({
 
   submittedText: function() {
     return new Date(this.submitted).toString();
-  }
+  },
+
+  ownItem: function() {
+    return this.userId == Meteor.userId();
+  },
 });
