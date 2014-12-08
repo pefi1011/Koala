@@ -1,20 +1,27 @@
 <template name="itemPage">
 
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{title}}</h3>
+    </div>
+    <div class="panel-body">
+      Beschreibung: {{description}}  <br/>
 
-  {{> itemEntry}}
+        {{#each photos}}
+        {{> photo}}
+        {{/each}}
 
-<h2>Title: {{title}}</h2>
-Beschreibung: {{description}}  <br/>
-Lokation: {{location}}  <br/>
-Author: {{author}} <br/>
-Erstellt am: {{submittedText}}  <br/>
+      Lokation: {{location}}  <br/>
+      Author: {{author}} <br/>
+      Erstellt am: {{submittedText}}  <br/>
+      Übrige Abreißzettel: {{tearoffs}}
+    </div>
+  </div>
 
 
-  <ul>
-    {{#each photos}}
-    {{> photo}}
-    {{/each}}
-  </ul>
+
+
+
 
 
   <!-- show comments -->
