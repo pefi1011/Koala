@@ -14,6 +14,6 @@ Meteor.publish('notifications', function() {
   return Notifications.find({userId: this.userId});
 });
 
-Meteor.publish('photos', function() {
-  return Photos.find();
+Meteor.publish('photos', function(itemId) {
+  return Photos.find({itemId: itemId});
 });
