@@ -15,9 +15,13 @@
       </a>
 
       <h3><a href="{{url}}">{{title}}</a></h3>
+      {{#if distance}}
+      Enfernung: {{distance}} km
+      {{/if}}
       <p>
-        Enfernung: {{distance}}km
-        {{#if ownItem}}<a href="{{pathFor 'itemEdit'}}">Edit</a>{{/if}}
+        {{#if ownItem}}
+       <a href="{{pathFor 'itemEdit'}}">Edit</a>{{/if}}
+
       </p>
       <p>
         <a href="{{pathFor 'itemPage'}}">{{commentsCount}} comments</a>
