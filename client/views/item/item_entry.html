@@ -4,8 +4,7 @@
     <div class="item-content">
       <a href="{{pathFor 'itemPage'}}">
 
-    <!-- if no thumbnail (what should never be the case)
-         show static image-->
+        <!-- if no thumbnail (what should never be the case) show static image-->
         {{#if thumbnail}}
           <img src="{{thumbnail}}" width="100px" height="100px"
                class="img-rounded" alt="Rounded Image"/>
@@ -17,7 +16,7 @@
 
       <h3><a href="{{url}}">{{title}}</a></h3>
       <p>
-        {{location}}
+        {{location}} Enfernung: {{distance}}
         {{#if ownItem}}<a href="{{pathFor 'itemEdit'}}">Edit</a>{{/if}}
       </p>
       <p>
