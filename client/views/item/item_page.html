@@ -21,8 +21,10 @@
 
 
 
-
-
+  <!-- when no comments exist we show this message -->
+  {{#if noComments}}
+    <p>There are no comments. Be the first one to comment this item!</p>
+  {{/if}}
 
   <!-- show comments -->
   <ul class="comments">
