@@ -21,4 +21,24 @@ Template.itemPage.helpers({
   ownItem: function() {
     return this.userId == Meteor.userId();
   },
+
+  distance: function(){
+    return calctulateDistance(this.location);
+  }
+});
+
+Template.itemPage.events({
+
+  'click .tearoff': function () {
+
+    Meteor.call('tearoffItem', this._id, function(error, id) {
+      if (error){
+        throwError(error.reason);
+      } else {
+        // nothing to do
+      }
+    });
+  }
+
+
 });

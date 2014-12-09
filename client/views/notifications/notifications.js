@@ -14,7 +14,7 @@ Template.notification.helpers({
 });
 
 Template.notification.events({
-  'click a': function() {
+  'click .notification-entry': function() {
     Notifications.update(this._id, {$set: {read: true}});
   }
 });

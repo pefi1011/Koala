@@ -15,9 +15,9 @@
       </a>
 
       <h3><a href="{{url}}">{{title}}</a></h3>
-      {{#if distance}}
-      Enfernung: {{distance}} km
-      {{/if}}
+
+      Enfernung: {{#if distance}}{{distance}}{{else}} - {{/if}} km
+
       <p>
         {{#if ownItem}}
        <a href="{{pathFor 'itemEdit'}}">Edit</a>{{/if}}

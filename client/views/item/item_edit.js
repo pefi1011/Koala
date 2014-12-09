@@ -6,8 +6,7 @@ Template.itemEdit.events({
 
     var itemProperties = {
       title: $(e.target).find('[name=title]').val(),
-      description: $(e.target).find('[name=description]').val(),
-      location: $(e.target).find('[name=location]').val()
+      description: $(e.target).find('[name=description]').val()
     };
 
     Items.update(currentItemId, {$set: itemProperties}, function(error) {

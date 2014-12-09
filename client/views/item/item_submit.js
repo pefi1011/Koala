@@ -104,11 +104,5 @@ Template.itemSubmit.helpers({
       return itemPhotos[2];
     }
     return null;
-  },
-
-  loc: function () {
-    // return 0, 0 if the location isn't ready
-    return Geolocation.latLng() || { lat: 35.6894875, lng: 139.69170639999993 };
-  },
-  error: Geolocation.error
+  }
 });
