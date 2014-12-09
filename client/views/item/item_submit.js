@@ -26,8 +26,7 @@ Template.itemSubmit.events({
       title: $(e.target).find('[name=title]').val(),
       description: $(e.target).find('[name=description]').val(),
       location: Geolocation.latLng(),
-      tearoffs: parseInt($(e.target).find('[name=tearoffs]').val()),
-      interestedUsers: []
+      tearoffs: parseInt($(e.target).find('[name=tearoffs]').val())
     };
 
     // get photos
