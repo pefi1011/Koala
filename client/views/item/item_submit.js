@@ -25,7 +25,7 @@ Template.itemSubmit.events({
     var newItem = {
       title: $(e.target).find('[name=title]').val(),
       description: $(e.target).find('[name=description]').val(),
-      location: $(e.target).find('[name=location]').val(),
+      location: Geolocation.latLng(),
       tearoffs: $(e.target).find('[name=tearoffs]').val(),
     };
 
