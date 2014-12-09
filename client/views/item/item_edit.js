@@ -1,10 +1,3 @@
-// Template.itemEdit.helpers({
-//   item: function() {
-//     alert("wird die funktion überhaupt benutzt?!");
-//     return Items.findOne(Session.get('currentItemId'));
-//   }
-// });
-
 Template.itemEdit.events({
   'submit form': function(e) {
     e.preventDefault();
@@ -15,7 +8,7 @@ Template.itemEdit.events({
       title: $(e.target).find('[name=title]').val(),
       description: $(e.target).find('[name=description]').val(),
       location: $(e.target).find('[name=location]').val()
-    }
+    };
 
     Items.update(currentItemId, {$set: itemProperties}, function(error) {
       if(error) {
