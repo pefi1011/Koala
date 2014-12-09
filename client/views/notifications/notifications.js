@@ -18,3 +18,14 @@ Template.notification.events({
     Notifications.update(this._id, {$set: {read: true}});
   }
 });
+
+
+Meteor.startup(function(){
+  Notifications.find({}).observe({
+    added:function (doc) {
+      if (Meteor.isCordova){
+        navigator.notification.vibrate(500);
+      }
+    }
+  });
+});
