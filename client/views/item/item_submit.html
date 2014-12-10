@@ -39,20 +39,41 @@
   <!-- take and show photos -->
   <div class="row">
 
-    <div class="col-sm-6 col-md-4">
-    <!-- first pic -->
-    {{> photoSubmit photoIndex=1}}
-    </div>
+  <!-- show first pic, if no pics exist -->
+  {{#if showFirstPic }}
 
     <div class="col-sm-6 col-md-4">
-    <!--   second pic -->
+      {{> photoSubmit photoIndex=0}}
+      1
+    </div>
+
+  {{/if}}
+
+  <!-- show the second pic if the first one exist and the third one not -->
+  {{#if showSecondPic }}
+
+    <div class="col-sm-6 col-md-4">
+      {{> photoSubmit photoIndex=1}}
+      2
+    </div>
+
+  {{/if}}
+
+
+  <!--  show the third pic only if first two exist -->
+  {{#if showThirdPic }}
+
+    <div class="col-sm-6 col-md-4">
     {{> photoSubmit photoIndex=2}}
+    3
     </div>
 
-    <div class="col-sm-6 col-md-4">
-    <!--   third pic -->
-    {{> photoSubmit photoIndex=3}}
-    </div>
+  {{/if}}
+
+
+
+
+
 
 
 

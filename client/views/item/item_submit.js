@@ -4,6 +4,35 @@ Template.itemSubmit.rendered = function() {
 
 Template.itemSubmit.helpers({
 
+  'showFirstPic': function(){
+
+      return true;
+  },
+
+  'showSecondPic': function(){
+
+    var tempPhotos = Session.get('itemPhotos');
+
+    // show second pic, if the first one exists or if the first two pics exist-->
+    if(typeof tempPhotos !== 'undefined' && tempPhotos.length >= 1)
+      return true;
+    else
+      return false;
+
+  },
+
+  'showThirdPic': function(){
+
+    var tempPhotos = Session.get('itemPhotos');
+
+    // show second pic, if the first two exist -->
+    if(typeof tempPhotos !== 'undefined' && tempPhotos.length >= 2)
+      return true;
+    else
+      return false;
+
+  },
+
 });
 
 Template.itemSubmit.events({
