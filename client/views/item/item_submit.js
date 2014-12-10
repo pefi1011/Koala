@@ -1,22 +1,12 @@
-
 Template.itemSubmit.rendered = function() {
   Session.set('itemPhotos', []);
 };
 
+Template.itemSubmit.helpers({
+
+});
+
 Template.itemSubmit.events({
-
-  'click .take-photo': function () {
-    MeteorCamera.getPicture(function (error, data) {
-      // we have a picture
-      if (! error) {
-
-        // get array of current photos
-        var tempPhotos = Session.get('itemPhotos');
-          tempPhotos.push(data);
-          Session.set('itemPhotos', tempPhotos );
-      }
-    });
-  },
 
   'submit form': function(e) {
     e.preventDefault();
@@ -52,57 +42,4 @@ Template.itemSubmit.events({
 
   },
 
-  'click .delete-photo1': function(e) {
-    e.preventDefault();
-
-    if (confirm("Delete this Photo?")) {
-      var photosTemp = Session.get('itemPhotos');
-      Session.set('itemPhotos', [photosTemp[1], photosTemp[2]]);
-    }
-  },
-
-  'click .delete-photo2': function(e) {
-    e.preventDefault();
-
-    if (confirm("Delete this Photo?")) {
-      var photosTemp = Session.get('itemPhotos');
-      Session.set('itemPhotos', [photosTemp[0], photosTemp[2]]);
-    }
-  },
-
-  'click .delete-photo3': function(e) {
-    e.preventDefault();
-
-    if (confirm("Delete this Photo?")) {
-      var photosTemp = Session.get('itemPhotos');
-      Session.set('itemPhotos', [photosTemp[0], photosTemp[1]]);
-    }
-  }
-});
-
-Template.itemSubmit.helpers({
-
-  itemPhoto1: function () {
-    var itemPhotos = Session.get("itemPhotos");
-    if (itemPhotos && itemPhotos[0]) {
-      return itemPhotos[0];
-    }
-    return null;
-  },
-
-  itemPhoto2: function () {
-    var itemPhotos = Session.get("itemPhotos");
-    if (itemPhotos && itemPhotos[1]) {
-      return itemPhotos[1];
-    }
-    return null;
-  },
-
-  itemPhoto3: function () {
-    var itemPhotos = Session.get("itemPhotos");
-    if (itemPhotos && itemPhotos[2]) {
-      return itemPhotos[2];
-    }
-    return null;
-  }
 });

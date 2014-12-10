@@ -1,23 +1,34 @@
 <template name="photoSubmit">
-  <div class="row">
 
-    <div class="col-sm-6 col-md-4">
+  <div class="col-sm-6 col-md-4">
+
+    <!-- if the picture doesnt exist, show camera icon -->
+    {{#unless photo}}
+
+      <button type="button" class="btn btn-default take-photo"
+              aria-label="Take Photo">
+        <span class="glyphicon glyphicon glyphicon-camera"
+              aria-hidden="true">
+        </span>
+      </button>
+    {{/unless}}
+
+    <!-- if the pic exists, show it -->
+    {{#if photo}}
       <div class="thumbnail">
-        <img src="{{itemPhoto1}}" alt="">
+
+        <img src="{{photo}}" alt="photo_{{photoIndex}}">
+
         <div class="caption">
-          <p>
-            <!-- TODO implementiere im manager bild erneut aufnehmen funktionalitat
-                dabei aufpassen, dass das richtige photo aus dem session ersetzt wird
-            -->
-            <a href="#" class="btn btn-primary add-photo1"
-               role="button">Bild erneut aufnehmen
-            </a>
-            <a href="#" class="btn btn-danger delete-photo1"
-               role="button">Bild löschen
-            </a>
-          </p>
+          <a href="#" class="btn btn-primary retake-photo"
+             role="button">Bild erneut aufnehmen
+          </a>
+
+          <a href="#" class="btn btn-danger delete-photo"
+             role="button">Bild löschen
+          </a>
         </div>
       </div>
-    </div>
+    {{/if}}
   </div>
 </template>

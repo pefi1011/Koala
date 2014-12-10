@@ -29,7 +29,7 @@
       <!-- we show tearoff button only if the user is not item owner-->
       {{#unless ownItem}}
       <div class="caption">
-        <a href="#" class="btn btn-primary tearoff"
+        <a href="#" class="btn btn-primary tearoff {{isDisabled}}"
           role="button">
           <span class="glyphicon glyphicon glyphicon-gift" aria-hidden="true">
             Abreißen

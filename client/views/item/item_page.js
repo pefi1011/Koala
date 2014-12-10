@@ -24,7 +24,18 @@ Template.itemPage.helpers({
 
   distance: function(){
     return calctulateDistance(this.location);
+  },
+
+  // not logged in users are not allowed to tearoff
+  isDisabled: function(){
+
+    var userId = Meteor.userId();
+
+    if (!userId) {
+      return 'disabled';
+    }
   }
+
 });
 
 Template.itemPage.events({
@@ -33,7 +44,7 @@ Template.itemPage.events({
 
     Meteor.call('tearoffItem', this._id, function(error, id) {
       if (error){
-        throwError(error.reason);
+          throwError(error.reason);
       } else {
         // nothing to do
       }
