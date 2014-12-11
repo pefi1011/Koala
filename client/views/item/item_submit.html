@@ -2,21 +2,25 @@
   <form class="main">
 
     {{> map}}
-    <!-- item title -->
-    <div class="control-group">
-      <label class="control-label" for="title">Titel</label>
-      <div class="controls">
-        <input name="title" type="text" value="" placeholder="Was schenkst du?" />
-      </div>
-    </div>
 
-    <!-- item description  -->
-    <div class="control-group">
-      <label class="control-label" for="description">Beschreibung</label>
-      <div class="controls">
-        <textarea name="description" type="text"
-        placeholder="Bitte beschreibe dein zu verschenkenden Gegenstand..."
-        rows ="4" style="width:100%"></textarea>
+
+  <!-- TODO move this part (title, description, location and flyers) to a template -->
+
+  <!-- item title -->
+  <div class="control-group">
+    <label class="control-label" for="title">Titel</label>
+    <div class="controls">
+      <input name="title" type="text" value="" placeholder="Was schenkst du?" />
+    </div>
+  </div>
+
+  <!-- item description  -->
+  <div class="control-group">
+    <label class="control-label" for="description">Beschreibung</label>
+    <div class="controls">
+      <textarea name="description" type="text"
+      placeholder="Bitte beschreibe dein zu verschenkenden Gegenstand..."
+      rows ="4" style="width:100%"></textarea>
     </div>
   </div>
 
@@ -39,41 +43,33 @@
   <!-- take and show photos -->
   <div class="row">
 
-  <!-- show first pic, if no pics exist -->
-  {{#if showFirstPic }}
+    <!-- show first pic, if no pics exist -->
+    {{#if showFirstPic }}
 
-    <div class="col-sm-6 col-md-4">
-      {{> photoSubmit photoIndex=0}}
-    </div>
+      <div class="col-sm-6 col-md-4">
+        {{> photoSubmit photoIndex=0}}
+      </div>
 
-  {{/if}}
+    {{/if}}
 
-  <!-- show the second pic if the first one exist and the third one not -->
-  {{#if showSecondPic }}
+    <!-- show the second pic if the first one exist and the third one not -->
+    {{#if showSecondPic }}
 
-    <div class="col-sm-6 col-md-4">
-      {{> photoSubmit photoIndex=1}}
-    </div>
+      <div class="col-sm-6 col-md-4">
+        {{> photoSubmit photoIndex=1}}
+      </div>
 
-  {{/if}}
-
-
-  <!--  show the third pic only if first two exist -->
-  {{#if showThirdPic }}
-
-    <div class="col-sm-6 col-md-4">
-    {{> photoSubmit photoIndex=2}}
-    </div>
-
-  {{/if}}
+    {{/if}}
 
 
+    <!--  show the third pic only if first two exist -->
+    {{#if showThirdPic }}
 
+      <div class="col-sm-6 col-md-4">
+      {{> photoSubmit photoIndex=2}}
+      </div>
 
-
-
-
-
+    {{/if}}
 
   </div>
 
