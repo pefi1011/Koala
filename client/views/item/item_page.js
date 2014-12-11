@@ -23,7 +23,7 @@ Template.itemPage.helpers({
   },
 
   distance: function(){
-    return calctulateDistance(this.location);
+    return calculateDistance(this.location);
   },
 
   // not logged in users are not allowed to tearoff
