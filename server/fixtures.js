@@ -203,7 +203,7 @@ if (Items.find().count() === 0) {
      author : panda.username,
      title : "Grill",
      description : "Grill funktioniert super, man könnt vllt den grillrost austauschen, da unserer bissel abgenutzt ist. Weststadt",
-     location : null,
+     location : { "lat" : 48.9928878, "lng" : 8.387306299999999 },
      submitted : 1418755984753,
      tearoffs : 4,
      commentsCount : 0,
@@ -242,7 +242,7 @@ if (Items.find().count() === 0) {
        author : koala.username,
        title : "Deutsche Flagge",
        description : "Wir brauchen die Flagge nicht mehr und geben es gerne ab. Grüße",
-       location : null,
+       location : { "lat" : 48.9928878, "lng" : 8.387306299999999 },
        submitted : 1418755710024,
        tearoffs : 6,
        commentsCount : 0,
@@ -265,7 +265,7 @@ if (Items.find().count() === 0) {
     author : filip.username,
     description : "Fernseher im Oststadt abzuholen",
     title : "SABA Fernseher",
-    location : null,
+    location : { "lat" : 48.9928878, "lng" : 8.387306299999999 },
     tearoffs : 5,
     submitted : 1418755604507,
     commentsCount : 0,
@@ -294,7 +294,7 @@ if (Items.find().count() === 0) {
      author : tigerrr.username,
      description : "Ich hab einen Rucksack zu vergeben..in der Nähe von HBF",
      title : "Rucksack",
-     location : null,
+     location : { "lat" : 48.9928878, "lng" : 8.387306299999999 },
      tearoffs : 4,
      submitted : 1418755454570,
      commentsCount : 0,
@@ -321,7 +321,7 @@ if (Items.find().count() === 0) {
      author : filip.username,
      description : "Ich habe einen 22 Zoll Monitor zu vergeben. Er br aucht 3 Minuten, um warm zu werden, damit das Bild klar wird...Er hat auch an der linken Seite 2 USB Anschlüsse, SD Karte Anschluss und einen CF Anschluss..desweiteren besitzt er HDMI, DVI und VGA Anschlüsse !!",
      title : "Dell Monitor",
-     location : null,
+     location : { "lat" : 48.9928878, "lng" : 8.387306299999999 },
      tearoffs : 6,
      submitted : 1418755262827,
      commentsCount : 0,
@@ -354,7 +354,7 @@ if (Items.find().count() === 0) {
       author : nikola.username,
       description : "TOP ZUSTAND, nur 3 Kratzen",
       title : "iPhone 4s",
-      location : null,
+      location : { "lat" : 48.9928878, "lng" : 8.387306299999999 },
       tearoffs : 7,
       submitted : 1418340864094,
       commentsCount : 11,
@@ -386,7 +386,7 @@ if (Items.find().count() === 0) {
        author : tigerrr.username,
        description : "Ich ziehe aus meiner Wohnung aus und gebe meinen Ventilor kostenlos. Er ist zwar klein, allerdings funktioniert er einwandfrei! Grüße",
        title : "Ventilator",
-       location : null,
+       location : { "lat" : 48.9928878, "lng" : 8.387306299999999 },
        tearoffs : 2,
        submitted : 1418754875890,
        commentsCount : 0,
@@ -413,9 +413,8 @@ if (Items.find().count() === 0) {
     });
 
 
-
   // ITEM 5 - 24 -
-  // for (var i = 5; i<25; i++ ) {
+  // for (var i = 80; i<105; i++ ) {
   //   Items.insert({
   //     userId: koala._id,
   //     author: koala.username,
@@ -427,16 +426,6 @@ if (Items.find().count() === 0) {
   //     interestedUsers : [  filip._id,  hundImBuro._id,  panda._id],
   //   });
   // }
-
-
-
-
-
-
-
-
-
-
 
 
 
