@@ -6,11 +6,13 @@
 
         <!-- if no thumbnail (what should never be the case) show static image-->
         {{#if thumbnail}}
-          <img src="{{thumbnail}}" width="100px" height="100px"
-               class="img-rounded" alt="Rounded Image"/>
+        <div class="item-entry-thumbnail img-rounded" style="background: url({{thumbnail}}) 50% 50% no-repeat;">
+          <!-- <img src="{{thumbnail}}" width="100px" height="100px"
+               class="img-rounded" alt="Rounded Image"/> -->
+        </div>
         {{else}}
           <img src="/images/125x125.jpg" width="100px"
-               height="100px" class="img-rounded" alt="Rounded Image"/>
+               height="100px" class="img-rounded" alt="No image found"/>
         {{/if}}
       </a>
 
