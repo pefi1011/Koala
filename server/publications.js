@@ -7,6 +7,10 @@ Meteor.publish('singleItem', function(id) {
   return id && Items.find(id);
 });
 
+Meteor.publish('interestedItems', function(options) {
+  return Items.find({}, options);
+});
+
 
 // Comments
 Meteor.publish('comments', function(itemId) {
