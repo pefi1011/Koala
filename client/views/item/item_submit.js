@@ -69,6 +69,10 @@ Template.itemSubmit.events({
 
     });
 
+    // clear session after submit item
+    Session.set('itemPhotos', []);
+
+
   },
 
 });
