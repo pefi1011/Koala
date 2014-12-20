@@ -25,7 +25,7 @@
           {{#if currentUser}}
           <li>
             <a href="{{pathFor 'itemSubmit'}}">
-              <span class="glyphicon glyphicon glyphicon-plus"
+              <span class="glyphicon glyphicon-plus"
               aria-hidden="true">
             </span>
             </a>
@@ -36,7 +36,7 @@
           <li>
             <!-- here should be {{pathFor 'itemSearch param'}}</a>  -->
             <a href="{{pathFor 'itemsList'}}" >
-              <span class="glyphicon glyphicon glyphicon-search"
+              <span class="glyphicon glyphicon-search"
                      aria-hidden="true">
              </span>
             </a>
@@ -46,6 +46,16 @@
           {{#if currentUser}}
           <li class="dropdown">
               {{> notifications}}
+          </li>
+
+          <!-- icon for tearoffs that I have pulled off-->
+          <li>
+            <!-- here should be {{pathFor 'itemSearch param'}}</a>  -->
+            <a href="{{pathFor 'itemsList'}}" >
+              <span class="glyphicon glyphicon-gift"
+                     aria-hidden="true">
+             </span>
+            </a>
           </li>
           {{/if}}
 
