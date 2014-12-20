@@ -1,5 +1,6 @@
 Template.profile.helpers({
   fullname: function() {
+    debugger
     return this.profile.first_name + " " + this.profile.last_name;
   },
 
@@ -7,8 +8,8 @@ Template.profile.helpers({
     return this.profile.rating;
   },
 
-  usersince: function() {
-    return this.profile.createdAt;
+  memberSince: function() {
+    return this.createdAt;
   },
 
 

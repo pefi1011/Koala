@@ -9,6 +9,7 @@ if (Items.find().count() === 0) {
     profile: {
       first_name: 'Pit Bull',
       last_name: 'Terrier',
+      rating: 3,
     }
   });
 
@@ -19,6 +20,7 @@ if (Items.find().count() === 0) {
     profile: {
       first_name: 'Filip',
       last_name: 'Perisic',
+      rating: 5
     }
   });
 
@@ -29,6 +31,7 @@ if (Items.find().count() === 0) {
     profile: {
       first_name: 'Nikola',
       last_name: 'Smiljanic',
+      rating: 5,
     }
   });
 
@@ -39,6 +42,7 @@ if (Items.find().count() === 0) {
     profile: {
       first_name: 'Lazy',
       last_name: 'Ninja',
+      rating: 3,
     }
   });
 
@@ -49,6 +53,7 @@ if (Items.find().count() === 0) {
     profile: {
       first_name: 'Shin',
       last_name: 'Kann',
+      rating: 3,
     }
   });
 
@@ -59,6 +64,7 @@ if (Items.find().count() === 0) {
     profile: {
       first_name: 'Lazy',
       last_name: 'Ninja',
+      rating: 5
     }
   });
 
