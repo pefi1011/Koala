@@ -50,9 +50,17 @@
 
           <!-- icon for tearoffs that I have pulled off-->
           <li>
-            <!-- here should be {{pathFor 'itemSearch param'}}</a>  -->
-            <a href="{{pathFor 'itemsList'}}" >
+            <a href="{{pathFor 'interestedItems'}}" >
               <span class="glyphicon glyphicon-gift"
+                     aria-hidden="true">
+             </span>
+            </a>
+          </li>
+
+          <!-- icon for users own items -->
+          <li>
+            <a href="{{pathFor 'myItems'}}" >
+              <span class="glyphicon glyphicon-tags"
                      aria-hidden="true">
              </span>
             </a>
