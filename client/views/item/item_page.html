@@ -1,5 +1,7 @@
 <template name="itemPage">
-
+  <div>
+  {{#Animate}}
+  <div class="animatedFadeUpBig animate animated">
   <!-- TODO the item's information should be moved to a template-->
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -62,5 +64,8 @@
     {{else}}
       <p>Please log in to leave a comment.</p>
   {{/if}}
+</div>
+{{/Animate}}
+</div>
 
 </template>

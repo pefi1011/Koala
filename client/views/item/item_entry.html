@@ -1,4 +1,8 @@
 <template name="itemEntry">
+  <div>
+  {{#Animate}}
+  <div class="animatedFadeLeftBig animate animated">
+
   <div class="item">
 
     <div class="item-content">
@@ -32,4 +36,7 @@
     <!-- <a href="{{pathFor 'itemPage'}}" class="discuss btn">Discuss</a> -->
     <span class="badge info discuss">{{tearoffs}}</span>
   </div>
+</div>
+{{/Animate}}
+</div>
 </template>
