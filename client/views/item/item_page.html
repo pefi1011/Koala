@@ -20,13 +20,13 @@
     </div>
 
     <div class="panel-body">
-      Beschreibung: {{description}}  <br/>
-
-      Entfernung: {{#if distance}}{{distance}} {{else}} - {{/if}} km<br/>
-
-      Author: <a href="{{pathFor 'profile'}}">{{author}}</a> <br/>
-      Erstellt am: {{submittedText}}  <br/>
-      Übrige Abreißzettel: {{tearoffs}}
+      <p>
+        <strong>Beschreibung: </strong> {{description}} <br/>
+        <strong>Entfernung: </strong> {{#if distance}}{{distance}} {{else}} - {{/if}} km<br/>
+        <strong>Eingestellt von: </strong> {{author}}<br/>
+        <strong>Eingestellt am: </strong> {{submittedText}}<br/>
+        <strong>Übrige Abreißzettel: </strong> {{tearoffs}}<br/>
+      </p>
 
       <!-- we show tearoff button only if the user is not item owner-->
       {{#unless ownItem}}
@@ -48,7 +48,7 @@
 
   <!-- when no comments exist we show this message -->
   {{#if noComments}}
-    <p>There are no comments. Be the first one to comment this item!</p>
+  <div class="alert alert-info" role="alert">There are no comments. Be the first one to comment this item!</div>
   {{/if}}
 
   <!-- show comments -->
