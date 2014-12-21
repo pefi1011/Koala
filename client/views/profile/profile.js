@@ -15,6 +15,10 @@ Template.profile.helpers({
     return "myItems count";
   },
 
+  currentlyPosted: function() {
+    return "user location";
+  },
+
   firstStar: function() {
     return this.profile.rating > 0;
   },

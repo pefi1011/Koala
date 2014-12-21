@@ -3,6 +3,11 @@
   min-height: 355px;
   display: inline-block;
 }
+
+.profile-image {
+  max-height: 150px;
+}
+
 figcaption.ratings
 {
   margin-top:20px;
