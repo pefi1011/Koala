@@ -23,7 +23,7 @@
       <p>
         <strong>Beschreibung: </strong> {{description}} <br/>
         <strong>Entfernung: </strong> {{#if distance}}{{distance}} {{else}} - {{/if}} km<br/>
-        <strong>Eingestellt von: </strong> {{author}}<br/>
+        <strong>Eingestellt von: </strong><a href="{{pathFor 'profile'}}"> {{author}}</a><br/>
         <strong>Eingestellt am: </strong> {{submittedText}}<br/>
         <strong>Übrige Abreißzettel: </strong> {{tearoffs}}<br/>
       </p>
