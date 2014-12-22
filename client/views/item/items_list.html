@@ -1,8 +1,13 @@
 <template name="itemsList">
   <div class="items">
-    {{#each items}}
-      {{> itemEntry}}
-    {{/each}}
+    {{#if items.count}}
+      {{#each items}}
+        {{> itemEntry}}
+      {{/each}}
+    {{else}}
+      {{> noResults message="Keine Ergebnisse :("}}
+
+    {{/if}}
 
     {{#if nextPath}}
       <a class="load-more" href="{{nextPath}}">Load more...</a>
