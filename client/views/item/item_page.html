@@ -28,24 +28,22 @@
         <strong>Übrige Abreißzettel: </strong> {{tearoffs}}<br/>
       </p>
 
-      <!-- we show tearoff button only if the user is not item owner-->
-      {{#unless ownItem}}
-      <div class="caption">
-        <a href="#" class="btn btn-primary tearoff {{isDisabled}}"
-          role="button">
-          <span class="glyphicon glyphicon glyphicon-gift" aria-hidden="true">
-            Abreißen
-          </span>
-        </a>
-      </div>
-      {{/unless}}
-
     </div>
-    <div class="tearoff-paper animated">hallo</div>
-    <div class="tearoff-paper animated">hallo</div>
-    <div class="tearoff-paper animated">hallo</div>
-    <div class="tearoff-paper animated">hallo</div>
-    <div class="tearoff-paper animated">hallo</div>
+
+    {{#unless ownItem}}
+      <!-- do this in a NON-STATIC way-->
+      <div id="tearoff1" class="tearoff-paper animated">Ja :)
+      </div>
+      <div id="tearoff2" class="tearoff-paper animated">Ja :)
+      </div>
+      <div id="tearoff3" class="tearoff-paper animated">Ja :)
+      </div>
+      <div id="tearoff4" class="tearoff-paper animated">Ja :)
+      </div>
+      <div id="tearoff5" class="tearoff-paper animated">Ja :)
+      </div>
+    {{/unless}}
+
   </div>
 
 

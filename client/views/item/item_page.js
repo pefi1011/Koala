@@ -40,16 +40,16 @@ Template.itemPage.helpers({
 
 Template.itemPage.events({
 
-  'click .tearoff': function () {
-
+  'click .tearoff-paper': function(event){
+    var item = document.getElementById(event.target.id);
     Meteor.call('tearoffItem', this._id, function(error, id) {
       if (error){
           throwError(error.reason);
       } else {
-        // nothing to do
+        // add the class to theelement
+        item.className += " teared-off-paper";
       }
     });
   }
-
 
 });
