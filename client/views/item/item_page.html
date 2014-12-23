@@ -2,7 +2,7 @@
   <div>
   {{#Animate}}
   <div class="animatedFadeUpBig animate animated">
-  <!-- TODO the item's information should be moved to a template-->
+
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">{{title}}</h3>
@@ -12,6 +12,7 @@
 
     <div class="panel-body">
 
+      <!-- show item's pic next to each other -->
       <div class="row-fluid">
 
             {{#each photos}}
@@ -22,18 +23,16 @@
     </div>
 
     <div class="panel-body">
-      <p>
-        <strong>Beschreibung: </strong> {{description}} <br/>
+        {{description}} <br/>
         <strong>Entfernung: </strong> {{#if distance}}{{distance}} {{else}} - {{/if}} km<br/>
         <strong>Eingestellt von: </strong><a href="{{pathFor 'profile'}}"> {{author}}</a><br/>
         <strong>Eingestellt am: </strong> {{submittedText}}<br/>
         <strong>Übrige Abreißzettel: </strong> {{tearoffs}}<br/>
-      </p>
 
     </div>
 
     {{#unless ownItem}}
-      <!-- do this in a NON-STATIC way-->
+      <!-- TODO do this in a NON-STATIC way-->
       <div id="tearoff1" class="tearoff-paper animated">Ja :)
       </div>
       <div id="tearoff2" class="tearoff-paper animated">Ja :)
@@ -54,7 +53,8 @@
 
   <!-- when no comments exist we show this message -->
   {{#if noComments}}
-  <div class="alert alert-info" role="alert">There are no comments. Be the first one to comment this item!</div>
+  <div class="alert alert-info" role="alert">
+    There are no comments. Be the first one to comment this item!</div>
   {{/if}}
 
   <!-- show comments -->
