@@ -1,12 +1,19 @@
 <template name="photoSubmit">
 
 
-    <!-- if the picture doesnt exist, show camera icon -->
+    <!-- if the picture doesnt exist, show camera and gallery icon -->
     {{#unless photo}}
 
       <button type="button" class="btn btn-default take-photo"
               aria-label="Take Photo">
         <span class="glyphicon glyphicon glyphicon-camera"
+              aria-hidden="true">
+        </span>
+      </button>
+
+      <button type="button" class="btn btn-default choose-photo"
+              aria-label="Take Photo">
+        <span class="glyphicon glyphicon glyphicon-picture"
               aria-hidden="true">
         </span>
       </button>
@@ -29,5 +36,5 @@
         </div>
       </div>
     {{/if}}
-    
+
 </template>

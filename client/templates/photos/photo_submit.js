@@ -37,6 +37,26 @@ Template.photoSubmit.events({
     });
   },
 
+  'click .choose-photo': function (e) {
+    e.preventDefault();
+
+    //this.photoIndex is the param that we passed
+    //when we inlcuded the photo_submit template
+    //in item_submit template
+    var photoIndex = this.photoIndex;
+
+    MeteorCamera.getPicture(function (error, data) {
+      // we have a picture
+      if (! error) {
+
+        // get array of current photos
+        var tempPhotos = Session.get('itemPhotos');
+        tempPhotos[photoIndex] = data;
+        Session.set('itemPhotos', tempPhotos );
+      }
+    });
+  },
+
   'click .retake-photo': function(e) {
     e.preventDefault();
 
