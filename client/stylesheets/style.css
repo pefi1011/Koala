@@ -166,7 +166,7 @@ body {
 }
 
 
-.tearoff-paper {
+.tearoff-strip {
   background-color: #fff;
   background-clip: padding-box;
   border-top: 3px dotted #fff;
@@ -180,7 +180,7 @@ body {
   height: 4em;
 }
 
-.teared-off-paper{
+.tearoff-strip-torn{
   -webkit-animation-name: tearoff;
   animation-name: tearoff;
   cursor: default;

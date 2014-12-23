@@ -33,15 +33,20 @@
 
     {{#unless ownItem}}
       <!-- TODO do this in a NON-STATIC way-->
-      <div id="tearoff1" class="tearoff-paper animated">Ja :)
+      <!-- benmalik: maybe we should simply have an array on the item with each
+      entry representing a tearoff. we can save the username in there if it's
+      been torn off. That way we don't need the "interested users" array, but
+      instead use a fixed length array -->
+      <!-- TODO show message if user already torn off tearoff strip -->
+      <div id="tearoff1" class="tearoff-strip animated">Ja :)
       </div>
-      <div id="tearoff2" class="tearoff-paper animated">Ja :)
+      <div id="tearoff2" class="tearoff-strip animated">Ja :)
       </div>
-      <div id="tearoff3" class="tearoff-paper animated">Ja :)
+      <div id="tearoff3" class="tearoff-strip animated">Ja :)
       </div>
-      <div id="tearoff4" class="tearoff-paper animated">Ja :)
+      <div id="tearoff4" class="tearoff-strip animated">Ja :)
       </div>
-      <div id="tearoff5" class="tearoff-paper animated">Ja :)
+      <div id="tearoff5" class="tearoff-strip animated">Ja :)
       </div>
     {{/unless}}
 

@@ -40,14 +40,14 @@ Template.itemPage.helpers({
 
 Template.itemPage.events({
 
-  'click .tearoff-paper': function(event){
+  'click .tearoff-strip': function(event){
     var item = document.getElementById(event.target.id);
     Meteor.call('tearoffItem', this._id, function(error, id) {
       if (error){
           throwError(error.reason);
       } else {
         // add the class to theelement
-        item.className += " teared-off-paper";
+        item.className += " tearoff-strip-torn";
       }
     });
   }
