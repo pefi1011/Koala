@@ -1,33 +1,43 @@
 <template name="itemEntryAlbumatic">
-  <div>
-  {{#Animate}}
-  <div class="animatedFadeLeftBig animate animated">
 
-  <div class="item">
+  <!-- <div>
+    {{#Animate}}
+    <div class="animatedFadeLeftBig animate animated">
+   -->
 
-    <div class="item-content">
-      <a href="{{pathFor 'itemPage'}}">
+      <li class="thumbnail col-lg-2 col-md-2 col-sm-3 col-xs-4">
+          <a href="{{pathFor 'itemPage'}}">
+          <img
+            alt="thumbnail_{{title}}" src="{{thumbnail}}"
+            class=" img-responsive img-rounded "
+            height="100px"
+          />
+        </a>
+      </li>
 
-        <!-- if no thumbnail (what should never be the case) show static image-->
-        {{#if thumbnail}}
-        <div class="item-entry-thumbnail img-rounded" style="background: url({{thumbnail}}) 50% 50% no-repeat; background-size: cover">
-          <img src="{{thumbnail}}" width="100px" height="100px"
-               class="img-rounded" alt="Rounded Image"/>
-        </div>
+      <!--     <div class="thumbnail item-content">
+  <a href="{{pathFor 'itemPage'}}">
 
-        {{else}}
-          <img src="/images/125x125.jpg" width="100px"
-               height="100px" class="img-rounded" alt="No image found"/>
-        {{/if}}
-      </a>
-      {{#if distance}}
-        {{distance}}
-      {{else}} - 
-      {{/if}} km
-
+    if no thumbnail (what should never be the case) show static image
+    {{#if thumbnail}}
+    <div class="item-entry-thumbnail img-rounded" style="background: url({{thumbnail}}) 50% 50% no-repeat; background-size: cover">
+      <img src="{{thumbnail}}" width="100px" height="100px"
+           class="img-rounded" alt="Rounded Image"/>
     </div>
-  </div>
-</div>
-{{/Animate}}
-</div>
+
+    {{else}}
+      <img src="/images/125x125.jpg" width="100px"
+           height="100px" class="img-rounded" alt="No image found"/>
+    {{/if}}
+  </a>
+  {{#if distance}}
+    {{distance}}
+  {{else}} -
+  {{/if}} km
+
+</div> -->
+
+    <!-- </div>
+    {{/Animate}}
+      </div> -->
 </template>
