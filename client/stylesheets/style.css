@@ -191,6 +191,20 @@ body {
 }
 
 
+.tearoff-strip-hidden {
+  background-color: #D6676E;
+  background-clip: padding-box;
+  border-top: 3px dotted #fff;
+  float: left;
+  font: 1.25em/2 sans-serif;
+  margin-bottom: .15em;
+  text-align: center;
+  padding: .5em 0;
+  position: relative;
+  width: 3em;
+  height: 4em;
+}
+
 @-webkit-keyframes tearoff {
   10% { top: 0; }
   20% { top: 0.3em;}
