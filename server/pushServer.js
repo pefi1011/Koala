@@ -9,7 +9,8 @@ Push.allow({
 
 var optionsProduction = {
   gcm: {
-    apiKey: 'AIzaSyDxn-_M3CXtqY1dj7XC9VGq_23QsXQxIh8'
+    apiKey: 'AIzaSyDxn-_M3CXtqY1dj7XC9VGq_23QsXQxIh8',
+    projectNumber: '420138116229'
   },
   // apn: {
   //   'passphrase': 'xxxxxxx',

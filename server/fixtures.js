@@ -52,8 +52,8 @@ if (Items.find().count() === 0) {
     email: 'tigerrr@zoo.de',
     password: 'Tigerrr',
     profile: {
-      first_name: 'Shin',
-      last_name: 'Kann',
+      first_name: 'Shir',
+      last_name: 'Khan',
       rating: 3,
     }
   });
