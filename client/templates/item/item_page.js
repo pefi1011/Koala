@@ -36,6 +36,7 @@ Template.itemPage.helpers({
     }
   },
 
+  // retruns true if a tearoff strip with the given index exists
   existStrip: function(index) {
     return this.interestedUsers[index] !== undefined;
   },
@@ -50,18 +51,6 @@ Template.itemPage.helpers({
     var currentUserId = Meteor.user()._id;
     var isSameUser = this.interestedUsers[index] == currentUserId;
     return (this.interestedUsers[index] !== null) && isSameUser;
-  },
-
-  // we use this to get the index of the tearoff flayer. There are also other ways but they mess up with the reactivity
-  getTearOffIndex : function() {
-    if(!this.indexingStarted){
-      this.indexingStarted = true;
-      this.tearoffIndex = 1;
-    } else {
-      this.tearoffIndex++;
-    }
-
-    return this.tearoffIndex;
   }
 
 });
@@ -79,8 +68,7 @@ Template.itemPage.events({
       if (error){
           throwError(error.reason);
       } else {
-        // add the class to theelement
-        clickedElement.className += " tearoff-strip-torn";
+
       }
     });
   }
