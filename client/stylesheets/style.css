@@ -203,6 +203,7 @@ body {
   position: relative;
   width: 3em;
   height: 4em;
+  visibility: hidden;
 }
 
 @-webkit-keyframes tearoff {
