@@ -20,7 +20,7 @@ Push.addListener('startup', function(notification) {
 // // When messages arrives in app already open:
 Push.addListener('message', function(notification) {
 
-
+  alert('Message listener');
   // Router.go('itemPage', {
   //   _id: notification.payload.itemId
   // });
