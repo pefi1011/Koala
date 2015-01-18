@@ -19,7 +19,11 @@
             </div>
             <div class="col-xs-12 col-sm-4 text-center">
               <figure>
+                {{#if profile.image}}
                 <img src="{{profile.image}}" alt="" class="img-circle img-responsive center-block profile-image">
+                {{else}}
+                <img src="/images/noprofileimage.jpg" alt="" class="img-circle img-responsive center-block profile-image">
+                {{/if}}
                 <figcaption class="ratings">
                   <p>Bewertung:<br/>
                     {{#if firstStar}}
@@ -76,12 +80,12 @@
             <div class="col-xs-12 col-sm-6 emphasis">
               <h2><strong> 14 </strong></h2>
               <p><small>Artikel verschenkt</small></p>
-              <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Siehe alle verschenkte Artikel </button>
+              <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Verschenkte Artikel ansehen </button>
             </div>
             <div class="col-xs-12 col-sm-6 emphasis">
               <h2><strong>3</strong></h2>
-              <p><small>Artikel geschenkt bekommen</small></p>
-              <button class="btn btn-warning btn-block"><span class="fa fa-user"></span> Siehe alle bekommene Artikel </button>
+              <p><small>Artikel erhalten</small></p>
+              <button class="btn btn-warning btn-block"><span class="fa fa-user"></span> Erhaltene Artikel ansehen</button>
             </div>
           </div>
         </div>

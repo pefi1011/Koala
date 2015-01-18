@@ -15,7 +15,7 @@ Template.profile.helpers({
     return "myItems count";
   },
 
-  currentlyPosted: function() {
+  userLocation: function() {
     return "user location";
   },
 
