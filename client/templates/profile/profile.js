@@ -37,6 +37,15 @@ Template.profile.helpers({
 
   fithStar: function() {
     return this.profile.rating > 4;
+  },
+
+  interestedInItemsCount: function() {
+    var interestedItems = this.profile.interestedItems;
+    return (interestedItems) ? interestedItems.length : 0;
+  },
+
+  offersItemsCount: function() {
+    return this.profile.rating > 4;
   }
 
 });
