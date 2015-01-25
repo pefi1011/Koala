@@ -2,7 +2,6 @@
   <div>
   {{#Animate}}
   <div class="animatedFadeLeftBig animate animated">
-
   <div id="panell" class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">{{title}}</h3>
@@ -27,6 +26,7 @@
         <strong>Entfernung: </strong> {{#if distance}}{{distance}} {{else}} - {{/if}} km<br/>
         <strong>Eingestellt von: </strong><a href="{{pathFor 'profile'}}"> {{author}}</a><br/>
         <strong>Eingestellt am: </strong> {{submittedText}}<br/>
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fbenkoalapush.meteor.com&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
 
     </div>
 
