@@ -1,26 +1,57 @@
 <template name="itemEdit">
   <form class="main">
 
-    <div class="control-group">
-      <label class="control-label" for="title">Title</label>
-      <div class="controls">
-        <input type="text" name="title" value="{{title}}" placeholder="Was schenkst du?" />
-      </div>
-    </div>
+  <!-- TODO move this part (title, description, location and flyers) to a template -->
 
-    <div class="control-group">
-      <label class="control-label" for="description">Beschreibung</label>
-      <div class="controls">
-        <input type="text" name="description" value="{{description}}" placeholder="" />
-      </div>
+  <!-- item title -->
+  <div class="control-group">
+    <label class="control-label" for="title">Titel</label>
+    <div class="controls">
+      <input name="title" type="text" value="{{title}}"/>
     </div>
+  </div>
 
-    <div class="control-group">
-        <label class="control-label" for="location">Standort</label>
-        <div class="controls">
-            <input name="location" type="text" value="{{location}}" placeholder="Wo bisch?"/>
-        </div>
+  <!-- item description  -->
+  <div class="control-group">
+    <label class="control-label" for="description">Beschreibung</label>
+    <div class="controls">
+      <textarea name="description" type="text"
+      rows ="4" style="width:100%">{{description}}</textarea>
     </div>
+  </div>
+
+  <!-- take and show photos -->
+  <div class="row">
+
+    <!-- show first pic, if no pics exist -->
+    {{#if showFirstPic }}
+
+      <div class="col-sm-6 col-md-4">
+        {{> photoSubmit photoIndex=0}}
+      </div>
+
+    {{/if}}
+
+    <!-- show the second pic if the first one exist and the third one not -->
+    {{#if showSecondPic }}
+
+      <div class="col-sm-6 col-md-4">
+        {{> photoSubmit photoIndex=1}}
+      </div>
+
+    {{/if}}
+
+
+    <!--  show the third pic only if first two exist -->
+    {{#if showThirdPic }}
+
+      <div class="col-sm-6 col-md-4">
+      {{> photoSubmit photoIndex=2}}
+      </div>
+
+    {{/if}}
+
+  </div>
 
     <div class="control-group">
       <div class="controls">
@@ -35,8 +66,6 @@
         <a class="btn btn-danger delete" href="#">Delete item</a>
       </div>
     </div>
-
-    
 
   </form>
 </template>
