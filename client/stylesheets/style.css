@@ -207,6 +207,10 @@ body {
   visibility: hidden;
 }
 
+.classWithBottomMargin {
+  margin-bottom:100px
+}
+
 @-webkit-keyframes tearoff {
   10% { top: 0; }
   20% { top: 0.3em;}
