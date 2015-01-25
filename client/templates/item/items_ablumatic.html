@@ -5,25 +5,40 @@
     <div class="animatedFadeUpBig animate animated">
 
 
-      <ul class="row-fluid">
-        <!-- show thumbanails as list items -->
-        {{#each items}}
+    <div id="panell" class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{getListType}}</h3>
 
-        {{> itemEntryAlbumatic}}
+      </div>
 
-        {{/each}}
+      <div class="panel-body">
 
-        <!-- show load more if exist -->
-        <li class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          {{#if nextPath}}
-            <a class="load-more" href="{{nextPath}}">Load more...</a>
-            {{else}}
-                {{#unless ready}}
-                  {{> spinner}}
-                {{/unless}}
-          {{/if}}
-        </li>
-    </ul>
+        <ul class="row-fluid">
+          <!-- show thumbanails as list items -->
+          {{#each items}}
+
+          {{> itemEntryAlbumatic}}
+
+          {{/each}}
+
+          <!-- show load more if exist -->
+          <li class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            {{#if nextPath}}
+              <a class="load-more" href="{{nextPath}}">Load more...</a>
+              {{else}}
+                  {{#unless ready}}
+                    {{> spinner}}
+                  {{/unless}}
+            {{/if}}
+          </li>
+        </ul>
+      </div>
+
+
+    </div>
+
+
+
 
 
 
