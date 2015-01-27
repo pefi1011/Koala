@@ -22,6 +22,14 @@ Template.itemPage.helpers({
     return this.userId == Meteor.userId();
   },
 
+  addMarginClass: function() {
+    if (this.userId == Meteor.userId()) {
+      return "";
+    } else {
+      return "classWithBottomMargin";
+    }
+  },
+
   distance: function(){
     return calculateDistance(this.location);
   },

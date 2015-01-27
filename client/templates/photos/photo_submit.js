@@ -53,6 +53,8 @@ Template.photoSubmit.events({
         var tempPhotos = Session.get('itemPhotos');
         tempPhotos[photoIndex] = data;
         Session.set('itemPhotos', tempPhotos );
+      } else {
+        alert(error);
       }
     });
   },

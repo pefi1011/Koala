@@ -11,8 +11,9 @@ Push.addListener('startup', function(notification) {
   }
   else if(notification.payload.pushType === 'interest'){
 
-    //TODO implement
-    alert('not implemented yet');
+    Router.go('itemPage', {
+      _id: notification.payload.itemId
+    });
   }
 });
 
@@ -20,15 +21,18 @@ Push.addListener('startup', function(notification) {
 // // When messages arrives in app already open:
 Push.addListener('message', function(notification) {
 
-  alert('Message listener');
-  // Router.go('itemPage', {
-  //   _id: notification.payload.itemId
-  // });
+  // notification has been sent because someone commented an item
+  if(notification.payload.pushType === 'comment'){
 
-  // if(notification.payload.title === 'Neuer Kommentar'){
-  //
-  //   Router.go('itemPage', {
-  //     _id: id
-  //   });
-  // }
+    // go to items page because there are the comments
+    Router.go('itemPage', {
+      _id: notification.payload.itemId
+    });
+  }
+  else if(notification.payload.pushType === 'interest'){
+
+    Router.go('itemPage', {
+      _id: notification.payload.itemId
+    });
+  }
 });

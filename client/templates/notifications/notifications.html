@@ -3,7 +3,7 @@
     {{#if notificationCount}}
       <span class="badge badge-notify">{{notificationCount}}</span>
     {{/if}}
-  </a>
+    Benachrichtigungen</a> 
   <ul class="notification dropdown-menu">
     {{#if notificationCount}}
       {{#each notifications}}
@@ -18,7 +18,7 @@
 <template name="notification">
   <li>
     <a class="notification-entry" href="{{notificationItemPath}}">
-      <strong>{{commenterName}}</strong> commented on your item
+      <strong>{{commenterName}}</strong> {{notificationText}}
     </a>
   </li>
 </template>

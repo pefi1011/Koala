@@ -27,33 +27,28 @@
             <a href="{{pathFor 'itemSubmit'}}">
               <span class="glyphicon glyphicon-plus"
               aria-hidden="true">
-            </span>
+            </span>&nbsp;&nbsp;&nbsp;Artikel erstellen
             </a>
           </li>
           {{/if}}
 
           <!-- search bar -->
-          <li>
+          <!-- <li> -->
             <!-- here should be {{pathFor 'itemSearch param'}}</a>  -->
-            <a href="{{pathFor 'itemsList'}}" >
+            <!-- <a href="{{pathFor 'itemsList'}}" >
               <span class="glyphicon glyphicon-search"
                      aria-hidden="true">
              </span>
             </a>
-          </li>
+          </li> -->
 
-          <!-- notifications icon with dropdwon functionality -->
           {{#if currentUser}}
-          <li class="dropdown">
-              {{> notifications}}
-          </li>
-
           <!-- icon for tearoffs that I have pulled off-->
           <li>
             <a href="{{pathFor 'interestedItems'}}" >
               <span class="glyphicon glyphicon-gift"
                      aria-hidden="true">
-             </span>
+             </span>&nbsp;&nbsp;&nbsp;Meine Interessen
             </a>
           </li>
 
@@ -62,9 +57,15 @@
             <a href="{{pathFor 'myItems'}}" >
               <span class="glyphicon glyphicon-tags"
                      aria-hidden="true">
-             </span>
+             </span>&nbsp;&nbsp;&nbsp;Meine Artikel
             </a>
           </li>
+
+          <!-- notifications icon with dropdwon functionality -->
+          <li class="dropdown">
+            {{> notifications}}
+          </li>
+
           {{/if}}
 
         </ul>

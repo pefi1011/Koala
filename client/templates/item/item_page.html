@@ -2,10 +2,11 @@
   <div>
   {{#Animate}}
   <div class="animatedFadeLeftBig animate animated">
-  <div id="panell" class="panel panel-default classWithBottomMargin">
+      <div id="panell" class="panel panel-default {{addMarginClass}}">
+
     <div class="panel-heading">
       <h3 class="panel-title">{{title}}</h3>
-      {{#if ownItem}}<a href="{{pathFor 'itemEdit'}}">Edit</a>{{/if}}
+      {{#if ownItem}}<a href="{{pathFor 'itemEdit'}}">Bearbeiten</a>{{/if}}
 
     </div>
 
@@ -288,7 +289,8 @@
   <!-- when no comments exist we show this message -->
   {{#if noComments}}
   <div class="alert alert-info" role="alert">
-    There are no comments. Be the first one to comment this item!</div>
+    Es gibt noch keine Kommentare. Sei der Erste der einen Kommentar hinterlässt!
+  </div>
   {{/if}}
 
   <!-- show comments -->
@@ -302,7 +304,7 @@
   {{#if currentUser}}
       {{> commentSubmit}}
     {{else}}
-      <p>Please log in to leave a comment.</p>
+      <p>Bitte logge dich ein, um einen Kommentar zu hinterlassen.</p>
   {{/if}}
 </div>
 {{/Animate}}
