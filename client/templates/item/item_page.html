@@ -51,6 +51,22 @@
 
       <!-- So I did it that ugly ugly way :)  I hope we will achieve to do it with {{#each}} somehow-->
 
+
+      {{#if existStrip 0}}
+        {{#if isTornOff 0}}
+          {{#if isTornOffByCurrentUser 0}}
+            <div id="tearoff0" class="tearoff-strip animated tearoff-strip-torn">Ja :)
+            </div>
+          {{else}}
+            <div id="tearoff0" class="tearoff-strip-hidden" >Ja :)
+            </div>
+          {{/if}}
+        {{else}}
+          <div id="tearoff0" class="tearoff-strip animated">Ja :)
+          </div>
+        {{/if}}
+      {{/if}}
+
       {{#if existStrip 1}}
         {{#if isTornOff 1}}
           {{#if isTornOffByCurrentUser 1}}
@@ -257,21 +273,6 @@
           {{/if}}
         {{else}}
           <div id="tearoff14" class="tearoff-strip animated">Ja :)
-          </div>
-        {{/if}}
-      {{/if}}
-
-      {{#if existStrip 15}}
-        {{#if isTornOff 15}}
-          {{#if isTornOffByCurrentUser 15}}
-            <div id="tearoff15" class="tearoff-strip animated tearoff-strip-torn">Ja :)
-            </div>
-          {{else}}
-            <div id="tearoff15" class="tearoff-strip-hidden" >Ja :)
-            </div>
-          {{/if}}
-        {{else}}
-          <div id="tearoff15" class="tearoff-strip animated">Ja :)
           </div>
         {{/if}}
       {{/if}}
