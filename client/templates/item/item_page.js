@@ -57,7 +57,7 @@ Template.itemPage.helpers({
   // returns true if a flayer with the given index is torn off by the current user
   isTornOffByCurrentUser: function(index) {
     var currentUserId = Meteor.user()._id;
-    var isSameUser = this.interestedUsers[index] == currentUserId;
+    var isSameUser = this.interestedUsers[index]._id == currentUserId;
     return (this.interestedUsers[index] !== null) && isSameUser;
   }
 
@@ -81,4 +81,14 @@ Template.itemPage.events({
     });
   }
 
+});
+
+
+Handlebars.registerHelper('eachProperty', function(context, options) {
+    var ret = "";
+    for(var prop in context)
+    {
+        ret = ret + options.fn({property:prop,value:context[prop]});
+    }
+    return ret;
 });

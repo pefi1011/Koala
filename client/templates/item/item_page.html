@@ -27,8 +27,19 @@
         <strong>Entfernung: </strong> {{#if distance}}{{distance}} {{else}} - {{/if}} km<br/>
         <strong>Eingestellt von: </strong><a href="{{pathFor 'profile'}}"> {{author}}</a><br/>
         <strong>Eingestellt am: </strong> {{submittedText}}<br/>
+        <strong>Interessierte Benutzer: </strong>
+
+        {{#if ownItem}}
+          {{#each interestedUsers}}
+            <a href="users/{{this._id}}">{{this.username}}</a>
+          {{/each}}
+        {{/if}}<br/>
+
+
         <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fbenkoalapush.meteor.com%2Fitems%2F{{_id}}&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:80px;" allowTransparency="true"></iframe>
     </div>
+
+
 
     {{#unless ownItem}}
       <!-- TODO show message if user already torn off tearoff strip -->
