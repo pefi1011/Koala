@@ -14,6 +14,10 @@ Template.profiles.helpers({
   currentlyPosted: function() {
     return "myItems count";
   },
+  
+  about : function() {
+    return this.profile.about;
+  },
 
   userLocation: function() {
     return "user location";

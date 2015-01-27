@@ -27,9 +27,8 @@
         <strong>Entfernung: </strong> {{#if distance}}{{distance}} {{else}} - {{/if}} km<br/>
         <strong>Eingestellt von: </strong><a href="{{pathFor 'profile'}}"> {{author}}</a><br/>
         <strong>Eingestellt am: </strong> {{submittedText}}<br/>
-        <strong>Interessierte Benutzer: </strong>
+        {{#if ownItem}}<strong>Interessierte Benutzer: </strong>
 
-        {{#if ownItem}}
           {{#each interestedUsers}}
             <a href="users/{{this._id}}">{{this.username}}</a>
           {{/each}}
