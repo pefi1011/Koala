@@ -11,6 +11,10 @@ Template.profile.helpers({
     return this.createdAt;
   },
 
+  about : function() {
+    return this.profile.about;
+  },
+
   currentlyPosted: function() {
     return "myItems count";
   },
